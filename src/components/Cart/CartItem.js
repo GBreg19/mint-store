@@ -6,6 +6,9 @@ const CartItem = ({ data }) => {
   const { removeFromCart, incrementCartItem, decrementCartItem } =
     useContext(CartContext);
 
+    console.log(data)
+
+
   return (
     <li className="border-2 border-hamBlue rounded-lg px-4 py-1 mb-2">
       <span className="flex justify-between items-center gap-2">

@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { Fragment, useContext, useState } from "react";
+import { useDispatch } from "react-redux";
 import { CartContext } from "../../store/CartContext";
 import Button from "../UI/Button";
+import { addToCart } from "../../slices/cartSlice";
 
 const Product = ({ item, data, setData }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
-  const { addToCart } = useContext(CartContext);
+  // const { addToCart } = useContext(CartContext);
+  const dispatch = useDispatch()
 
   const onRemove = async (id) => {
     try {
@@ -25,7 +28,7 @@ const Product = ({ item, data, setData }) => {
 
   const onAddCartHandler = (id) => {
     const addedItem = data.find((item) => item.id === id);
-    addToCart(addedItem);
+    dispatch(addToCart(addedItem))
   };
 
   return (

@@ -6,8 +6,6 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
   const [amount, setAmount] = useState(1);
-  const [total, setTotal] = useState(null);
-  const [totalItems, setTotalItems] = useState(null);
 
   const addToCart = (item) => {
     const existingItem = cartItems.find((it) => it.id === item.id);
@@ -58,8 +56,6 @@ export const CartProvider = ({ children }) => {
         amount,
         incrementCartItem,
         decrementCartItem,
-        total,
-        totalItems,
       }}
     >
       {children}

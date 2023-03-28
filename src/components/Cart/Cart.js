@@ -3,10 +3,12 @@ import { CartContext } from "../../store/CartContext";
 import CartItem from "./CartItem";
 import Button from "../UI/Button";
 import emptyCart from "../../Images/empty-cart.png";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
-  const { cartItems, setIsClicked, total } = useContext(CartContext);
-  console.log(total);
+  const { setIsClicked, total } = useContext(CartContext);
+  const cartItems = useSelector((state) => state.cart.cartItems)
+  console.log(cartItems)
   return (
     <div className="w-[40rem] pb-5 fixed top-1/4 left-1/2 -translate-x-2/4 bg-white rounded-lg z-50">
       <div className="bg-hamLightBlue rounded-t-lg relative py-4">

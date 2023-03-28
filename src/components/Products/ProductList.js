@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../UI/Button";
 import Container from "../UI/Container";
 import Product from "./Product";
-import ProductAdd from "./ProductAdd";
 
 const ProductList = () => {
-  const [x, setX] = useState([]);
+  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ProductList = () => {
       try {
         const response = await axios.get(`http://localhost:3004/products`);
         // console.log(response.data);
-        setX(response.data);
+        setProducts(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -48,9 +48,9 @@ const ProductList = () => {
       </div>
       <div className="rounded-lg border-t-2 border-white-900">
         <ul className="flex flex-wrap gap-10 pt-5">
-          {x.map((item) => {
+          {products.map((item) => {
             return (
-              <Product key={item.id} item={item} data={x} setData={setX} />
+              <Product key={item.id} item={item} data={products} setData={setProducts} />
             );
           })}
         </ul>
