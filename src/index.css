@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "RobotoReg";
+  src: url("../public/fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../public/fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "RobotoLight";
+  src: url("../public/fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: "RobotoMed";
+  src: url("../public/fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "RobotoIta";
+  src: url("../public/fonts/Roboto/Roboto-BoldItalic.ttf");
+}
+
+body {
+  background-color: rgb(221, 221, 221);
+}

@@ -1,0 +1,112 @@
+{
+  "products": [
+    {
+      "sku": "XYZ12345",
+      "name": "Lord of the Rings",
+      "price": "23.50",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": "0.8"
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 1
+    },
+    {
+      "sku": "XYZ34567",
+      "name": "Wardrobe",
+      "price": "630.70",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": ""
+      },
+      "furniture": {
+        "height": "2.10",
+        "width": "1.15",
+        "length": "4.20"
+      },
+      "id": 3
+    },
+    {
+      "sku": "XHSD76234",
+      "name": "Be Here Now",
+      "price": "15.99",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": "0.8"
+      },
+      "furniture": {
+        "height": "15",
+        "width": "",
+        "length": ""
+      },
+      "id": 4
+    },
+    {
+      "sku": "JKSY230539",
+      "name": "Ghostbusters (1984)",
+      "price": "8.88",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": "300"
+      },
+      "book": {
+        "weight": ""
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 5
+    },
+    {
+      "sku": "OJEK32912",
+      "name": "A Song of Ice and Fire · A Clash of Kings (1998)",
+      "price": "25.50",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": "1.2"
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 6
+    },
+    {
+      "sku": "OPW43263",
+      "name": "Carmel Chaise Sofa",
+      "price": "1,642",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": ""
+      },
+      "furniture": {
+        "height": "81",
+        "width": "192",
+        "length": "92"
+      },
+      "id": 7
+    }
+  ]
+}
