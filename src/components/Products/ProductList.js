@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import Button from "../UI/Button";
 import Container from "../UI/Container";
 import Product from "./Product";

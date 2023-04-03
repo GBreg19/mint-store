@@ -1,22 +1,25 @@
 import React, { useContext } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCart } from "../../slices/cartSlice";
 import { CartContext } from "../../store/CartContext";
 import Button from "../UI/Button";
 
 const HeaderCartBtn = () => {
-  const { setIsClicked, cartItems, totalItems } = useContext(CartContext);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity)
+  const dispatch = useDispatch();
 
-  const handleClick = () => {
-    setIsClicked(true);
-  };
+  // const handleClick = () => {
+  //   dispatch(toggleCart(true));
+  // };
 
   return (
-    <Button cart onClick={handleClick}>
+    <Button cart onClick={() => dispatch(toggleCart(true))}>
       <FaShoppingCart />
       <div className="w-7/12 flex justify-between font-robotoLight relative">
         <span>Cart</span>
         <span className="absolute w-5 text-sm text-hamBlue font-robotoBold bg-white rounded-full top-2/4 -translate-y-2/4 -right-3">
-          {totalItems}
+          {totalQuantity > 0 ? totalQuantity : ''}
         </span>
       </div>
     </Button>
