@@ -2,16 +2,11 @@ import React, { useContext } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "../../slices/cartSlice";
-import { CartContext } from "../../store/CartContext";
 import Button from "../UI/Button";
 
 const HeaderCartBtn = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity)
   const dispatch = useDispatch();
-
-  // const handleClick = () => {
-  //   dispatch(toggleCart(true));
-  // };
 
   return (
     <Button cart onClick={() => dispatch(toggleCart(true))}>

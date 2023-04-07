@@ -93,7 +93,7 @@
     {
       "sku": "OPW43263",
       "name": "Carmel Chaise Sofa",
-      "price": "1,642",
+      "price": "1.642",
       "typeSwitcher": "",
       "dvd": {
         "size": ""
@@ -107,6 +107,78 @@
         "length": "92"
       },
       "id": 7
+    },
+    {
+      "sku": "JSK23521",
+      "name": "Return of the Jedi: Beware the Power of the Dark Side!",
+      "price": "38.99",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": "ew"
+      },
+      "book": {
+        "weight": "172.21"
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 8
+    },
+    {
+      "sku": "LWO12352",
+      "name": "Pirates of the Caribbean - Complete (Blu-ray)",
+      "price": "24.99",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": "52000"
+      },
+      "book": {
+        "weight": ""
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 9
+    },
+    {
+      "sku": "ISP19532",
+      "name": "Crime and Punishment",
+      "price": "9.25",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": "0.192"
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 10
+    },
+    {
+      "sku": "DKF19532",
+      "name": "Adventures of Huckleberry Finn",
+      "price": "13.30",
+      "typeSwitcher": "",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": "0.280"
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 11
     }
   ]
 }

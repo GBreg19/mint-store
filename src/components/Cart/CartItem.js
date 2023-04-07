@@ -1,8 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FaTrash, FaPlusSquare, FaMinusSquare } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { calculateTotal, decrement, increment, removeFromCart } from "../../slices/cartSlice";
-import { CartContext } from "../../store/CartContext";
+import { useDispatch } from "react-redux";
+import {
+  calculateTotal,
+  decrement,
+  increment,
+  removeFromCart,
+} from "../../slices/cartSlice";
 
 const CartItem = ({ data }) => {
   const dispatch = useDispatch();
@@ -38,7 +42,10 @@ const CartItem = ({ data }) => {
         </span>
         <span
           className="cursor-pointer"
-          onClick={() => dispatch(removeFromCart(data))}
+          onClick={() => {
+            dispatch(removeFromCart(data));
+            dispatch(calculateTotal());
+          }}
         >
           <FaTrash className="text-gray-700 text-sm" />
         </span>

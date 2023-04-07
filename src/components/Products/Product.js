@@ -3,11 +3,15 @@ import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../UI/Button";
 import { addToCart, calculateTotal } from "../../slices/cartSlice";
+import { FaTrash, FaPencilAlt } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { onEdit } from "../../slices/formSlice";
 
 const Product = ({ item, data, setData }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
-  // const { addToCart } = useContext(CartContext);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onRemove = async (id) => {
     try {
@@ -25,10 +29,20 @@ const Product = ({ item, data, setData }) => {
     onRemove(id);
   };
 
+  const onEditHandler = async (id) => {
+    navigate("product-add");
+    try {
+      const resp = await axios.get(`http://localhost:3004/products/${id}`);
+      dispatch(onEdit(resp.data))
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const onAddCartHandler = (id) => {
     const addedItem = data.find((item) => item.id === id);
-    dispatch(addToCart(addedItem))
-    dispatch(calculateTotal())
+    dispatch(addToCart(addedItem));
+    dispatch(calculateTotal());
   };
 
   return (
@@ -78,11 +92,15 @@ const Product = ({ item, data, setData }) => {
           ...
         </button>
         {isWindowOpen && (
-          <div className="absolute flex justify-between top-0 right-0 bg-gray-200 p-2 w-4/12 duration-1000 rounded-tr-lg font-robotoLight transform transition duration-500">
-            <button>Edit</button>
-            <button onClick={() => onDeleteHandler(item.id)}>Remove</button>
+          <div className="absolute flex justify-between top-0 right-0 bg-gray-200 p-2 w-[90px] duration-1000 rounded-tr-lg rounded-bl-sm font-robotoLight transform transition duration-500">
+            <button title="Edit" onClick={() => onEditHandler(item.id)}>
+              <FaPencilAlt />
+            </button>
+            <button title="Remove" onClick={() => onDeleteHandler(item.id)}>
+              <FaTrash />
+            </button>
             <button title="Close" onClick={() => setIsWindowOpen(false)}>
-              X
+              <AiOutlineClose className="text-xl" />
             </button>
           </div>
         )}
