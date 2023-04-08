@@ -3,13 +3,13 @@
     {
       "sku": "XYZ12345",
       "name": "Lord of the Rings",
-      "price": "23.50",
-      "typeSwitcher": "",
+      "price": "25.50",
+      "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },
       "book": {
-        "weight": "0.8"
+        "weight": "0.9"
       },
       "furniture": {
         "height": "",
@@ -21,8 +21,8 @@
     {
       "sku": "XYZ34567",
       "name": "Wardrobe",
-      "price": "630.70",
-      "typeSwitcher": "",
+      "price": "635.70",
+      "typeSwitcher": "furniture",
       "dvd": {
         "size": ""
       },
@@ -32,15 +32,15 @@
       "furniture": {
         "height": "2.10",
         "width": "1.15",
-        "length": "4.20"
+        "length": "5.20"
       },
       "id": 3
     },
     {
       "sku": "XHSD76234",
       "name": "Be Here Now",
-      "price": "15.99",
-      "typeSwitcher": "",
+      "price": "18.99",
+      "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },
@@ -57,8 +57,8 @@
     {
       "sku": "JKSY230539",
       "name": "Ghostbusters (1984)",
-      "price": "8.88",
-      "typeSwitcher": "",
+      "price": "8.98",
+      "typeSwitcher": "dvd",
       "dvd": {
         "size": "300"
       },
@@ -75,8 +75,8 @@
     {
       "sku": "OJEK32912",
       "name": "A Song of Ice and Fire · A Clash of Kings (1998)",
-      "price": "25.50",
-      "typeSwitcher": "",
+      "price": "23.51",
+      "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },
@@ -93,8 +93,8 @@
     {
       "sku": "OPW43263",
       "name": "Carmel Chaise Sofa",
-      "price": "1.642",
-      "typeSwitcher": "",
+      "price": "1.442",
+      "typeSwitcher": "furniture",
       "dvd": {
         "size": ""
       },
@@ -112,9 +112,9 @@
       "sku": "JSK23521",
       "name": "Return of the Jedi: Beware the Power of the Dark Side!",
       "price": "38.99",
-      "typeSwitcher": "",
+      "typeSwitcher": "book",
       "dvd": {
-        "size": "ew"
+        "size": "22"
       },
       "book": {
         "weight": "172.21"
@@ -130,7 +130,7 @@
       "sku": "LWO12352",
       "name": "Pirates of the Caribbean - Complete (Blu-ray)",
       "price": "24.99",
-      "typeSwitcher": "",
+      "typeSwitcher": "dvd",
       "dvd": {
         "size": "52000"
       },
@@ -147,13 +147,13 @@
     {
       "sku": "ISP19532",
       "name": "Crime and Punishment",
-      "price": "9.25",
-      "typeSwitcher": "",
+      "price": "14.35",
+      "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },
       "book": {
-        "weight": "0.192"
+        "weight": "0.292"
       },
       "furniture": {
         "height": "",
@@ -166,7 +166,7 @@
       "sku": "DKF19532",
       "name": "Adventures of Huckleberry Finn",
       "price": "13.30",
-      "typeSwitcher": "",
+      "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },

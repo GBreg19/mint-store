@@ -7,7 +7,6 @@ import { toggleCart } from "../../slices/cartSlice";
 
 const Cart = () => {
   const {cartItems, totalAmount} = useSelector((state) => ({cartItems: state.cart.cartItems, totalAmount: state.cart.totalAmount}));
-  console.log(totalAmount)
   const dispatch = useDispatch();
   return (
     <div className="w-[40rem] pb-5 fixed top-1/4 left-1/2 -translate-x-2/4 bg-white rounded-lg z-50">

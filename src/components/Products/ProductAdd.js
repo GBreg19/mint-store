@@ -15,12 +15,11 @@ const ProductAdd = () => {
     validate,
     setValidate,
     selected,
-    onSelectHandler,
     onChangeHandler,
     onSubmitHandler,
   } = useForm();
 
-  const inputValues = useSelector((state) => state.form.inputValues)
+  const inputValues = useSelector((state) => state.form.inputValues);
 
   const dispatch = useDispatch();
 
@@ -43,36 +42,45 @@ const ProductAdd = () => {
           return { ...prevState, price: "" };
         });
       }
-      if (selected !== "typeSwitcher") {
+      if (inputValues.typeSwitcher !== "typeSwitcher") {
         setErrorTxts((prevState) => {
           return { ...prevState, type: "" };
         });
       }
-      if (selected === "dvd" && inputValues.dvd.size.length >= 1) {
+      if (
+        inputValues.typeSwitcher === "dvd" &&
+        inputValues.dvd.size.length >= 1
+      ) {
         setErrorTxts((prevState) => {
           return { ...prevState, dvdSize: "" };
         });
       }
-      if (selected === "book" && inputValues.book.weight.length >= 1) {
+      if (
+        inputValues.typeSwitcher === "book" &&
+        inputValues.book.weight.length >= 1
+      ) {
         setErrorTxts((prevState) => {
           return { ...prevState, bookWeight: "" };
         });
       }
       if (
-        selected === "furniture" &&
+        inputValues.typeSwitcher === "furniture" &&
         inputValues.furniture.height.length >= 1
       ) {
         setErrorTxts((prevState) => {
           return { ...prevState, furnHeight: "" };
         });
       }
-      if (selected === "furniture" && inputValues.furniture.width.length >= 1) {
+      if (
+        inputValues.typeSwitcher === "furniture" &&
+        inputValues.furniture.width.length >= 1
+      ) {
         setErrorTxts((prevState) => {
           return { ...prevState, furnWidth: "" };
         });
       }
       if (
-        selected === "furniture" &&
+        inputValues.typeSwitcher === "furniture" &&
         inputValues.furniture.length.length >= 1
       ) {
         setErrorTxts((prevState) => {
@@ -80,7 +88,7 @@ const ProductAdd = () => {
         });
       }
 
-      const inputs = inputValues[selected];
+      const inputs = inputValues[inputValues.typeSwitcher];
       const inputsLength = Object.keys(inputs).filter(
         (key) => inputs[key].length > 0
       ).length;
@@ -89,7 +97,7 @@ const ProductAdd = () => {
         inputValues.sku.length >= 1 &&
           inputValues.name.length >= 1 &&
           inputValues.price.length >= 1 &&
-          selected !== "typeSwitcher" &&
+          inputValues.typeSwitcher !== "typeSwitcher" &&
           inputsLength > 0
       );
     }, 100);
@@ -178,8 +186,9 @@ const ProductAdd = () => {
               <div>
                 <label>Select type of product</label>
                 <select
-                  value={selected}
-                  onChange={onSelectHandler}
+                  name="typeSwitcher"
+                  value={inputValues.typeSwitcher}
+                  onChange={onChangeHandler}
                   className="form-select appearance-none
               block
       w-full
@@ -204,7 +213,7 @@ const ProductAdd = () => {
                   <option value="furniture">Furniture</option>
                 </select>
               </div>
-              {selected === "dvd" ? (
+              {inputValues.typeSwitcher === "dvd" ? (
                 <div>
                   <label>Size (MB)</label>
                   <Input
@@ -219,7 +228,7 @@ const ProductAdd = () => {
                     </p>
                   )}
                 </div>
-              ) : selected === "book" ? (
+              ) : inputValues.typeSwitcher === "book" ? (
                 <div>
                   <label>Weight (KG)</label>
                   <Input
@@ -234,7 +243,7 @@ const ProductAdd = () => {
                     </p>
                   )}
                 </div>
-              ) : selected === "furniture" ? (
+              ) : inputValues.typeSwitcher === "furniture" ? (
                 <div>
                   <label>Height (CM)</label>
                   <Input

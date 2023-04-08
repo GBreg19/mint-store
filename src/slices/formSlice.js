@@ -6,7 +6,7 @@ const initialState = {
     sku: "",
     name: "",
     price: "",
-    typeSwitcher: "",
+    typeSwitcher: "typeSwitcher",
     dvd: {
       size: "",
     },
@@ -26,9 +26,6 @@ export const formSlice = createSlice({
   name: "form",
   initialState: initialState,
   reducers: {
-    onSelectedChange: (state, action) => {
-      state.selected = action.payload;
-    },
     onChange: (state, action) => {
       const { name, value } = action.payload;
       return produce(state, (draftState) => {
@@ -54,7 +51,6 @@ export const formSlice = createSlice({
     },
     onEdit: (state, action) => {
         const selectedItem  = action.payload;
-        console.log(selectedItem)
       return produce(state, (draftState) => {
         draftState.inputValues = selectedItem
       });
