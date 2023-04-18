@@ -12,7 +12,7 @@ const Button = (props) => {
             } transition-all duration-300`}}`
           : props.cartClose
           ? "absolute top-4 right-5 bg-transparent"
-          : ""
+          : props.submitBtn ? 'w-full mt-2' : ''
       } `}
       type={props.type || "button"}
       onClick={props.onClick}

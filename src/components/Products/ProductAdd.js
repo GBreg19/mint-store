@@ -5,8 +5,7 @@ import Input from "../UI/Input";
 import eCommerce from "../../Images/e-commerce.png";
 import Container from "../UI/Container";
 import useForm from "../../hooks/useForm";
-import { useDispatch, useSelector } from "react-redux";
-import { onChange } from "../../slices/formSlice";
+import { useSelector } from "react-redux";
 
 const ProductAdd = () => {
   const {
@@ -19,9 +18,15 @@ const ProductAdd = () => {
     onSubmitHandler,
   } = useForm();
 
-  const inputValues = useSelector((state) => state.form.inputValues);
+  // const [x, setX] = useState(null)
 
-  const dispatch = useDispatch();
+  // const img = (e) => {
+  //   console.log(e.target.files[0])
+  //   setX(e.target.files[0])
+  // }
+  // console.log(x)
+
+  const inputValues = useSelector((state) => state.form.inputValues);
 
   const navigate = useNavigate();
 
@@ -115,20 +120,13 @@ const ProductAdd = () => {
             <h1 className="text-4xl font-robotoLight">Product Add</h1>
           </div>
           <div>
-            <ul className="flex justify-between w-44">
-              <li>
-                <Button type="submit">Submit</Button>
-              </li>
-              <li>
-                <Button
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                >
-                  Cancel
-                </Button>
-              </li>
-            </ul>
+            <Button
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Cancel
+            </Button>
           </div>
         </div>
         <div className="border-white-900 rounded-lg bg-gradient-to-r from-white to-hamLightBlue">
@@ -141,7 +139,11 @@ const ProductAdd = () => {
                   you're interested in adding a product to our platform.
                 </h1>
               </div>
-              <div className="user-inputs">
+              {/* <div>
+                <label>Image</label>
+                <Input type='file' id='x' accept="image/*" onChange={img} />
+              </div> */}
+              <div>
                 <label>SKU</label>
                 <Input
                   name="sku"
@@ -288,6 +290,7 @@ const ProductAdd = () => {
                   {errorTxts.type}
                 </p>
               )}
+              <Button submitBtn={true} type="submit">Submit</Button>
             </div>
             <div className="basis-3/5 h-74 py-0 px-24 lg:w-6/12 flex flex-col text-white justify-center items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
               <h1 className="uppercase font-robotoBold text-xl mb-10">

@@ -6,6 +6,7 @@ const initialState = {
     sku: "",
     name: "",
     price: "",
+    image: '',
     typeSwitcher: "typeSwitcher",
     dvd: {
       size: "",
@@ -28,6 +29,7 @@ export const formSlice = createSlice({
   reducers: {
     onChange: (state, action) => {
       const { name, value } = action.payload;
+      // console.log(files[0])
       return produce(state, (draftState) => {
         if (name === "size") {
           draftState.inputValues.dvd.size = value;

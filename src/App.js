@@ -6,6 +6,7 @@ import Cart from "./components/Cart/Cart";
 import Modal from "./components/modal/Modal";
 import ProductAdd from "./components/Products/ProductAdd";
 import ProductList from "./components/Products/ProductList";
+import Footer from "./components/Body/Footer";
 
 function App() {
   const isClicked = useSelector((state) => state.cart.isClicked);
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" element={<ProductList />}></Route>
         <Route exact path="/product-add" element={<ProductAdd />}></Route>
       </Routes>
+      <Footer />
     </Fragment>
   );
 }
