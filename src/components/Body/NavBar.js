@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaHeart, FaUser, FaShoppingBag } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,9 +8,28 @@ const NavBar = () => {
   const navigate = useNavigate();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="flex justify-between">
+    <div
+      className={`flex justify-between ${
+        isFixed ? "fixed top-0 left-[50%] translate-x-[-50%] py-10 w-9/12 px-40 z-50 bg-white" : ""
+      }`}
+    >
       <span onClick={() => navigate("/")} className="basis-1/12">
         <h1 className="font-robotoBold text-2xl cursor-pointer">Mint</h1>
       </span>

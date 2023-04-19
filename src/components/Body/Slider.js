@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import books from "../../Images/books.jpg";
+import dvd from "../../Images/dvd.jpg";
+import furniture from "../../Images/furniture.jpg";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { BsFillCircleFill } from "react-icons/bs";
 
 const Slider = () => {
   const [slides, setSlides] = useState([
@@ -12,49 +15,64 @@ const Slider = () => {
     },
     {
       id: 2,
-      img: books,
+      img: dvd,
       title: "Mint Store",
-      description: "DVD",
+      description: "DVDs",
     },
     {
       id: 3,
-      img: books,
+      img: furniture,
       title: "Mint Store",
-      description: "Furniture",
+      description: "Furnitures",
     },
   ]);
-  const [slideIndex, setSlideIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const toSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  setTimeout(() => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  }, 5000);
 
   return (
-    <div>
-      {
-        <div className="mt-10 relative">
-          <img src={slides[slideIndex].img} />
-            <span className="absolute top-2 left-2">
-              <h2>{slides[slideIndex].title}</h2>
-              <p>{slides[slideIndex].description}</p>
-            </span>
-          <span className="absolute inset-y-1/2 -translate-y-2/4 w-full px-5 flex justify-between">
-            <AiOutlineArrowLeft className="text-4xl cursor-pointer" onClick={() => setSlideIndex(prevState => prevState -= 1)}/>
-            <AiOutlineArrowRight className="text-4xl cursor-pointer"  onClick={() => setSlideIndex(prevState => prevState += 1)}/>
-          </span>
-        </div>
-      }
-      {/* {slides.map((slide) => {  
-        return (
-          <div key={slide.id} className="mt-10 relative">
-            <img src={slide.img} />
-            <span className="absolute inset-y-1/2 -translate-y-2/4 w-full px-5 flex justify-between">
-              <AiOutlineArrowLeft className="text-4xl cursor-pointer"/>
-              <AiOutlineArrowRight className="text-4xl cursor-pointer"/>
-            </span>
-            <span className="absolute top-2 left-2">
-              <h2>{slide.title}</h2>
-              <p>{slide.description}</p>
-            </span>
+    <div className="max-w-[1400px] h-[780px] w-full py-16 px-4 relative group">
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
+        className="w-full h-full rounded-2xl bg-center bg-cover duration-500 relative"
+      >
+        {/* <span className="absolute top-2 left-2 bg-white/20 py-2 px-5 rounded-lg  text-white">
+          <h2>{slides[currentIndex].title}</h2>
+          <p>{slides[currentIndex].description}</p>
+        </span> */}
+      </div>
+      <div className="hidden group-hover:block absolute top-[50%] translate-x-0 translate-y-[-50%] left-10 rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <AiOutlineArrowLeft size={30} onClick={prevSlide} />
+      </div>
+      <div className="hidden group-hover:block absolute top-[50%] translate-x-0 translate-y-[-50%] right-10 rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <AiOutlineArrowRight size={30} onClick={nextSlide} />
+      </div>
+      <div className="flex absolute bottom-20 left-[50%] translate-x-[-50%] w-1/12 justify-between py-2">
+        {slides.map((slide, slideIndex) => (
+          <div key={slideIndex} className="text-xl cursor-pointer">
+            <BsFillCircleFill className={`${currentIndex === slideIndex ? 'text-white/80' : 'text-white/50'}`} onClick={() => toSlide(slideIndex)} />
           </div>
-        );
-      })} */}
+        ))}
+      </div>
     </div>
   );
 };
