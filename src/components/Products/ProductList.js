@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
-import Container from "../UI/Container";
 import Product from "./Product";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+  const [visibleItems, setVisibleItems] = useState(3)
   const [isActive, setIsActive] = useState("all");
   const navigate = useNavigate();
 
@@ -64,8 +64,12 @@ const ProductList = () => {
     }
   };
 
+  const onLoadMore = () => {
+    setVisibleItems((prevState) => prevState += 3)
+  }
+
   return (
-    <Container>
+    <Fragment>
       <div className="flex justify-between items-center py-2">
         <div>
           <h1 className="text-4xl font-robotoReg">Popular Products</h1>
@@ -127,9 +131,9 @@ const ProductList = () => {
           </Button>
         </div>
       </div>
-      <div className="border-t-2 border-white-900">
+      <div>
         <ul className="flex flex-wrap gap-10 pt-10">
-          {products.map((item) => {
+          {products.slice(0, visibleItems).map((item) => {
             return (
               <Product
                 key={item.id}
@@ -140,8 +144,12 @@ const ProductList = () => {
             );
           })}
         </ul>
+        {
+          visibleItems < products.length &&
+        <Button className='block m-auto mt-5 px-10' onClick={onLoadMore}>Load More</Button>
+        }
       </div>
-    </Container>
+    </Fragment>
   );
 };
 

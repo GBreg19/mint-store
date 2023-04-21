@@ -290,7 +290,7 @@ const ProductAdd = () => {
                   {errorTxts.type}
                 </p>
               )}
-              <Button submitBtn={true} type="submit">Submit</Button>
+              <Button className='w-full mt-2' type="submit">Submit</Button>
             </div>
             <div className="basis-3/5 h-74 py-0 px-24 lg:w-6/12 flex flex-col text-white justify-center items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
               <h1 className="uppercase font-robotoBold text-xl mb-10">

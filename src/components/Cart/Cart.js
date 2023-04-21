@@ -10,13 +10,13 @@ const Cart = () => {
   const dispatch = useDispatch();
   return (
     <div className="w-[40rem] pb-5 fixed top-1/4 left-1/2 -translate-x-2/4 bg-white rounded-lg z-50">
-      <div className="bg-hamLightBlue rounded-t-lg relative py-4">
-        <Button
+      <div className="bg-hamLightBlue rounded-t-lg relative py-4 relative">
+        <button
           onClick={() => dispatch(dispatch(toggleCart(false)))}
-          cartClose={true}
+          className="absolute right-5 font-bold text-xl text-white top-[50%] translate-y-[-50%]"
         >
           X
-        </Button>
+        </button>
         <h1 className="flex justify-center pt-1 text-white text-xl font-robotoLight">
           Your Cart
         </h1>

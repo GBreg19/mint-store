@@ -53,13 +53,12 @@ const Product = ({ item, data, setData }) => {
             <h3 className="border-b-2 border-white-900 pb-1 mb-3 mr-5">
               Title
             </h3>
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white font-robotoBold">
+            <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white font-robotoBold">
               {item.name}
             </h5>
           </span>
           <span className="font-robotoLight">
             <h3 className="border-b-2 border-white-900 pb-1 mb-3">Details</h3>
-            <p>SKU: {item.sku}</p>
             {item.dvd.size && <p>Size: {item.dvd.size}</p>}
             {item.book.weight && <p>Weight: {item.book.weight}</p>}
             {item.furniture.width &&
