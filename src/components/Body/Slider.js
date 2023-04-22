@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import books from "../../Images/books.jpg";
 import dvd from "../../Images/dvd.jpg";
 import furniture from "../../Images/furniture.jpg";
@@ -50,10 +50,10 @@ const Slider = () => {
   }, 5000);
 
   return (
-    <div className="max-w-[1400px] h-[780px] w-full py-10 px-4 relative group">
+    <div className="max-w-[1400px] h-[700px] w-full py-16 px-4 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
-        className="w-full h-full rounded-lg bg-center bg-cover duration-500 relative"
+        className="w-full h-full bg-center bg-cover duration-500 relative"
       >
         {/* <span className="absolute top-2 left-2 bg-white/20 py-2 px-5 rounded-lg  text-white">
           <h2>{slides[currentIndex].title}</h2>

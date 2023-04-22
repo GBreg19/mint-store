@@ -22,6 +22,14 @@
   font-family: "RobotoIta";
   src: url("../public/fonts/Roboto/Roboto-BoldItalic.ttf");
 }
+@font-face {
+  font-family: 'Danc';
+  src: url('../public/fonts/static/DancingScript-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'DancBold';
+  src: url('../public/fonts/static/DancingScript-Bold.ttf');
+}
 
 body {
   background-color: rgb(221, 221, 221);

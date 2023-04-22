@@ -19,24 +19,6 @@
       "id": 1
     },
     {
-      "sku": "XYZ34567",
-      "name": "Wardrobe",
-      "price": "635.70",
-      "typeSwitcher": "furniture",
-      "dvd": {
-        "size": ""
-      },
-      "book": {
-        "weight": ""
-      },
-      "furniture": {
-        "height": "2.10",
-        "width": "1.15",
-        "length": "5.20"
-      },
-      "id": 3
-    },
-    {
       "sku": "XHSD76234",
       "name": "Be Here Now",
       "price": "18.99",

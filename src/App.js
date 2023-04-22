@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Body/Header";
 import Cart from "./components/Cart/Cart";
 import Modal from "./components/modal/Modal";
-import ProductAdd from "./components/Pages/ProductAdd";
+import ProductAdd from "./components/Pages/ProductAdd"; 
 import Footer from "./components/Body/Footer";
 import Home from "./components/Pages/Home";
 
@@ -14,7 +14,7 @@ function App() {
     <Fragment>
       <Header />
       {isClicked && <Modal />}
-      {isClicked && <Cart />}
+      <Cart />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/product-add" element={<ProductAdd />}></Route>

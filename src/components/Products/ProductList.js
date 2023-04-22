@@ -70,7 +70,7 @@ const ProductList = () => {
 
   return (
     <Fragment>
-      <div className="flex justify-between items-center py-2">
+      <div className="flex justify-between items-center pb-5">
         <div>
           <h1 className="text-4xl font-robotoReg">Popular Products</h1>
         </div>
@@ -132,7 +132,7 @@ const ProductList = () => {
         </div>
       </div>
       <div>
-        <ul className="flex flex-wrap gap-10 pt-10">
+        <ul className="grid grid-cols-3 grid-flow-rows gap-5 pt-10">
           {products.slice(0, visibleItems).map((item) => {
             return (
               <Product
@@ -146,7 +146,7 @@ const ProductList = () => {
         </ul>
         {
           visibleItems < products.length &&
-        <Button className='block m-auto mt-5 px-10' onClick={onLoadMore}>Load More</Button>
+        <Button className='block m-auto mt-10 px-11 rounded-none' onClick={onLoadMore}>Load More</Button>
         }
       </div>
     </Fragment>

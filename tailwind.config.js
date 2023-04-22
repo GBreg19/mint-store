@@ -11,6 +11,8 @@ module.exports = {
         robotoBold: ["RobotoBold"],
         robotoIta: ["RobotoIta"],
         robotoLight: ["RobotoLight"],
+        danc: ['Danc'],
+        dancBold: ['DancBold']
       },
       spacing: {
         120: "123rem",
