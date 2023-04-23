@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mint-store/static/css/main.237d113d.css",
-    "main.js": "/mint-store/static/js/main.7a6a3ea2.js",
+    "main.js": "/mint-store/static/js/main.e8f0c60f.js",
     "static/media/books.jpg": "/mint-store/static/media/books.9f19739f95dbbabe6417.jpg",
     "static/media/cover.jpg": "/mint-store/static/media/cover.5bdc136642b2a593df50.jpg",
     "static/media/dvd.jpg": "/mint-store/static/media/dvd.1007f7485d71b1d64e83.jpg",
@@ -15,10 +15,10 @@
     "static/media/DancingScript-Bold.ttf": "/mint-store/static/media/DancingScript-Bold.7b161e4b34f18d21d23e.ttf",
     "index.html": "/mint-store/index.html",
     "main.237d113d.css.map": "/mint-store/static/css/main.237d113d.css.map",
-    "main.7a6a3ea2.js.map": "/mint-store/static/js/main.7a6a3ea2.js.map"
+    "main.e8f0c60f.js.map": "/mint-store/static/js/main.e8f0c60f.js.map"
   },
   "entrypoints": [
     "static/css/main.237d113d.css",
-    "static/js/main.7a6a3ea2.js"
+    "static/js/main.e8f0c60f.js"
   ]
 }
