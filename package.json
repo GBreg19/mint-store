@@ -1,4 +1,5 @@
 {
+  "homepage": "http://{gbreg19}.github.io/{mint-store}",
   "name": "products-front",
   "version": "0.1.0",
   "private": true,
@@ -18,7 +19,6 @@
     "styled-components": "^5.3.8",
     "web-vitals": "^2.1.4"
   },
-  "homepage": {"homepage": "http://{github-username}.github.io/{mint-store}"},
   "scripts": {
     "start": "react-scripts start",
     "predeploy" : "npm run build",
