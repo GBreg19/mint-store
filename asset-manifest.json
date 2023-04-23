@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/%7Bmint-store%7D/static/css/main.e5fe0dcd.css",
+    "main.js": "/%7Bmint-store%7D/static/js/main.8d8f4d91.js",
+    "static/media/books.jpg": "/%7Bmint-store%7D/static/media/books.9f19739f95dbbabe6417.jpg",
+    "static/media/cover.jpg": "/%7Bmint-store%7D/static/media/cover.5bdc136642b2a593df50.jpg",
+    "static/media/dvd.jpg": "/%7Bmint-store%7D/static/media/dvd.1007f7485d71b1d64e83.jpg",
+    "static/media/furniture.jpg": "/%7Bmint-store%7D/static/media/furniture.677ad4843b834106fc9f.jpg",
+    "static/media/Roboto-BoldItalic.ttf": "/%7Bmint-store%7D/static/media/Roboto-BoldItalic.87d61cea6fe1d235d4a8.ttf",
+    "static/media/Roboto-Medium.ttf": "/%7Bmint-store%7D/static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
+    "static/media/Roboto-Regular.ttf": "/%7Bmint-store%7D/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/Roboto-Bold.ttf": "/%7Bmint-store%7D/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/Roboto-Light.ttf": "/%7Bmint-store%7D/static/media/Roboto-Light.333da16a3f3cc391d087.ttf",
+    "static/media/DancingScript-SemiBold.ttf": "/%7Bmint-store%7D/static/media/DancingScript-SemiBold.20079cfc865e089a9cee.ttf",
+    "static/media/DancingScript-Bold.ttf": "/%7Bmint-store%7D/static/media/DancingScript-Bold.7b161e4b34f18d21d23e.ttf",
+    "index.html": "/%7Bmint-store%7D/index.html",
+    "main.e5fe0dcd.css.map": "/%7Bmint-store%7D/static/css/main.e5fe0dcd.css.map",
+    "main.8d8f4d91.js.map": "/%7Bmint-store%7D/static/js/main.8d8f4d91.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5fe0dcd.css",
+    "static/js/main.8d8f4d91.js"
+  ]
+}
