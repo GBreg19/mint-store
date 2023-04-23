@@ -11,7 +11,7 @@ import { onEdit } from "../../slices/formSlice";
 const Product = ({ item, data, setData }) => {
   const [isWindowOpen, setIsWindowOpen] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const onRemove = async (id) => {
     try {
@@ -33,7 +33,7 @@ const Product = ({ item, data, setData }) => {
     navigate("product-add");
     try {
       const resp = await axios.get(`http://localhost:3004/products/${id}`);
-      dispatch(onEdit(resp.data))
+      dispatch(onEdit(resp.data));
     } catch (e) {
       console.log(e);
     }
