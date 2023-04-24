@@ -22,7 +22,7 @@ function App() {
       {isClicked && <Modal />}
       <Cart />
       <Routes>
-        <Route exact path="/mint-store" element={<Home />}></Route>
+        <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/product-add" element={<ProductAdd data={breadCrumbs} />}></Route>
       </Routes>
       <Footer />
