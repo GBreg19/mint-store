@@ -21,7 +21,7 @@ const ProductList = () => {
         setIsLoading(false);
       } catch (err) {
         console.log(err);
-        setError("Error fetching products. Please try again later.");
+        setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
         setIsLoading(false);
       }
     })();
@@ -33,7 +33,7 @@ const ProductList = () => {
       setProducts(response.data);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later.");
+      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
     }
   };
 
@@ -44,7 +44,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later.");
+      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
     }
   };
 
@@ -57,7 +57,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later.");
+      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
     }
   };
 
@@ -70,7 +70,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later.");
+      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
     }
   };
 
