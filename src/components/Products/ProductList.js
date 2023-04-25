@@ -6,17 +6,23 @@ import Product from "./Product";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-  const [visibleItems, setVisibleItems] = useState(3)
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [visibleItems, setVisibleItems] = useState(3);
   const [isActive, setIsActive] = useState("all");
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsLoading(true);
     (async () => {
       try {
         const response = await axios.get(`http://localhost:3004/products`);
         setProducts(response.data);
+        setIsLoading(false);
       } catch (err) {
         console.log(err);
+        setError("Error fetching products. Please try again later.");
+        setIsLoading(false);
       }
     })();
   }, []);
@@ -27,6 +33,7 @@ const ProductList = () => {
       setProducts(response.data);
     } catch (err) {
       console.log(err);
+      setError("Error fetching products. Please try again later.");
     }
   };
 
@@ -37,6 +44,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
+      setError("Error fetching products. Please try again later.");
     }
   };
 
@@ -49,6 +57,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
+      setError("Error fetching products. Please try again later.");
     }
   };
 
@@ -61,11 +70,16 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
+      setError("Error fetching products. Please try again later.");
     }
   };
 
   const onLoadMore = () => {
-    setVisibleItems((prevState) => prevState += 3)
+    setVisibleItems((prevState) => (prevState += 3));
+  };
+
+  if (error) {
+    return <div>{error}</div>;
   }
 
   return (
@@ -144,10 +158,14 @@ const ProductList = () => {
             );
           })}
         </ul>
-        {
-          visibleItems < products.length &&
-        <Button className='block m-auto mt-10 px-11 rounded-none' onClick={onLoadMore}>Load More</Button>
-        }
+        {visibleItems < products.length && (
+          <Button
+            className="block m-auto mt-10 px-11 rounded-none"
+            onClick={onLoadMore}
+          >
+            Load More
+          </Button>
+        )}
       </div>
     </Fragment>
   );
