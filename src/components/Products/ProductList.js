@@ -16,12 +16,12 @@ const ProductList = () => {
     setIsLoading(true);
     (async () => {
       try {
-        const response = await axios.get(`http://localhost:3004/products`);
+        const response = await axios.get(`http://localhost:3004/productss`);
         setProducts(response.data);
         setIsLoading(false);
       } catch (err) {
         console.log(err);
-        setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
+        setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
         setIsLoading(false);
       }
     })();
@@ -33,7 +33,7 @@ const ProductList = () => {
       setProducts(response.data);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
+      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
     }
   };
 
@@ -44,7 +44,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
+      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
     }
   };
 
@@ -57,7 +57,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
+      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
     }
   };
 
@@ -70,7 +70,7 @@ const ProductList = () => {
       setProducts(filteredArr);
     } catch (err) {
       console.log(err);
-      setError("Error fetching products. Please try again later. To fetch data run this code - json-server --watch db.json --port 3004");
+      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
     }
   };
 
@@ -79,7 +79,7 @@ const ProductList = () => {
   };
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="m-auto text-center w-94 text-red-500 font-robotoBold">{error}</div>;
   }
 
   return (
