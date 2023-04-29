@@ -28,7 +28,7 @@ export const cartSlice = createSlice({
         0
       );
     },
-    toggleCart: (state, action) => {
+    toggleOnClick: (state, action) => {
       state.isClicked = action.payload;
     },
     increment: (state, action) => {
@@ -72,7 +72,7 @@ export const cartSlice = createSlice({
 
 export const {
   addToCart,
-  toggleCart,
+  toggleOnClick,
   increment,
   decrement,
   removeFromCart,

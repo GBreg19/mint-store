@@ -1,13 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { toggleCart } from "../../slices/cartSlice";
+import { toggleOnClick } from "../../slices/cartSlice";
 
-const Modal = () => {
-  const dispatch = useDispatch()
+const Modal = ({ onClose }) => {
+  const dispatch = useDispatch();
   return (
     <div
       className="fixed inset-0 bg-black opacity-50 z-30"
-      onClick={() => dispatch(toggleCart(false))}
+      onClick={() => {
+        dispatch(toggleOnClick(false));
+        onClose(false);
+      }}
     ></div>
   );
 };

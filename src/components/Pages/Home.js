@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "../Products/ProductList";
-import Slider from "../Body/Slider";
+import Slider from "../Layout/Slider";
 import Container from "../UI/Container";
 import cover from "../../Images/cover.jpg";
 

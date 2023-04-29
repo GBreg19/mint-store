@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import CartItem from "./CartItem";
-import Button from "../UI/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleCart } from "../../slices/cartSlice";
+import { toggleOnClick } from "../../slices/cartSlice";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Cart = () => {
@@ -21,7 +20,7 @@ const Cart = () => {
     >
       <div className="relative">
         <button
-          onClick={() => dispatch(dispatch(toggleCart(false)))}
+          onClick={() => dispatch(dispatch(toggleOnClick(false)))}
           className="absolute left-5 font-bold text-3xl top-[50%] translate-y-[-50%]"
         >
           <AiOutlineClose />
