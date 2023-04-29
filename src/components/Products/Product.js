@@ -46,8 +46,8 @@ const Product = ({ item, data, setData }) => {
   };
 
   return (
-    <div className="bg-white max-w-sm border border-gray-200 hover:bg-gray-100 duration-1000 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative pt-5">
-      <div className="px-5 pb-5 flex flex-col justify-between h-56">
+    <div className="lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 duration-1000 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative pt-5">
+      <div className="2xl:px-10 px-5 pb-5 flex flex-col justify-between h-56">
         <div className="flex">
           <span className="basis-6/12 mr-10">
             <h3 className="border-b-2 border-white-900 pb-1 mb-3 mr-5">

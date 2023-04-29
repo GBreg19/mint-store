@@ -50,7 +50,7 @@ const Slider = () => {
   }, 5000);
 
   return (
-    <div className="max-w-[1400px] h-[700px] w-full py-16 relative group">
+    <div className="md:block hidden w-full h-[700px] py-16 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
         className="w-full h-full bg-center bg-cover duration-500 relative"
@@ -66,7 +66,7 @@ const Slider = () => {
       <div className="hidden group-hover:block absolute top-[50%] translate-x-0 translate-y-[-50%] right-10 rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <AiOutlineArrowRight size={30} onClick={nextSlide} />
       </div>
-      <div className="flex absolute bottom-20 left-[50%] translate-x-[-50%] w-1/12 justify-between py-2">
+      <div className="flex absolute bottom-20 left-[50%] translate-x-[-50%] w-[100px] justify-between py-2">
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} className="text-xl cursor-pointer">
             <BsFillCircleFill className={`${currentIndex === slideIndex ? 'text-white/80' : 'text-white/50'}`} onClick={() => toSlide(slideIndex)} />

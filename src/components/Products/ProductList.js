@@ -88,8 +88,8 @@ const ProductList = () => {
         <div>
           <h1 className="text-4xl font-robotoReg">Popular Products</h1>
         </div>
-        <div className="flex items-center basis-1/3 justify-between">
-          <ul className="flex basis-5/6 justify-between">
+        <div className="flex items-center justify-between w-80">
+          <ul className="flex justify-between gap-2">
             <li
               onClick={() => {
                 onAllProducts();
@@ -99,7 +99,7 @@ const ProductList = () => {
                 isActive === "all" ? "text-gray-500" : ""
               }`}
             >
-              All Products
+              All
             </li>
             <li
               onClick={() => {
@@ -139,14 +139,13 @@ const ProductList = () => {
             onClick={() => {
               navigate("product-add");
             }}
-            className="basis-1/12"
           >
             Add
           </Button>
         </div>
       </div>
       <div>
-        <ul className="grid grid-cols-3 grid-flow-rows gap-5 pt-10">
+        <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-rows gap-5 pt-10 place-items-center">
           {products.slice(0, visibleItems).map((item) => {
             return (
               <Product
