@@ -8,9 +8,10 @@ import ProductAdd from "./components/Pages/ProductAdd";
 import Footer from "./components/Layout/Footer";
 import Home from "./components/Pages/Home";
 import SidebarMenu from "./components/Layout/SidebarMenu";
+import Login from "./components/Pages/Login";
 
 function App() {
-  const [isBurgerClicked, setIsBurgerClicked] = useState(false)
+  const [isBurgerClicked, setIsBurgerClicked] = useState(false);
   const isClicked = useSelector((state) => state.cart.isClicked);
 
   const [breadCrumbs, setBreadCrumbs] = useState([
@@ -19,17 +20,22 @@ function App() {
   ]);
 
   const onSideBarMenuClick = (resp) => {
-    setIsBurgerClicked(resp)
-  }
+    setIsBurgerClicked(resp);
+  };
 
   return (
     <Fragment>
       <Header onSideBurger={(resp) => onSideBarMenuClick(resp)} />
-      <SidebarMenu clickEvents={{isBurgerClicked, setIsBurgerClicked}} /> 
+      <SidebarMenu clickEvents={{ isBurgerClicked, setIsBurgerClicked }} />
       {(isClicked || isBurgerClicked) && <Modal onClose={setIsBurgerClicked} />}
       <Cart />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
+        <Route
+          exact
+          path="/login"
+          element={<Login data={breadCrumbs} />}
+        ></Route>
         <Route
           exact
           path="/product-add"

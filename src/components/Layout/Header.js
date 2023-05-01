@@ -44,7 +44,7 @@ const Header = ({ onSideBurger }) => {
       <div
         className={`grid lg:grid-cols-3 grid-cols-2 justify-between md:pt-10 items-center ${
           isFixed
-            ? "fixed top-0 left-[50%] translate-x-[-50%] py-10 2xl:w-[1400px] lg:w-[1150px] w-full lg:px-40 md:px-20 px-5 z-30 bg-white border-b-[1px] border-black/10"
+            ? "fixed top-0 left-[50%] translate-x-[-50%] py-10 2xl:w-[1400px] lg:w-[1150px] w-full lg:px-30 md:px-20 px-5 z-30 bg-white border-b-[1px] border-black/10"
             : ""
         }`}
       >
@@ -73,7 +73,7 @@ const Header = ({ onSideBurger }) => {
         {/* third col  */}
         <div className="lg:w-1/3 md:w-1/2 w-7/12 lg:col-span-1 md:justify-self-end justify-self-center">
           <div className="flex justify-between">
-            <button>
+            <button onClick={() => navigate('/login')}>
               <FaUser className="text-xl hover:text-sky-500" />
             </button>
             <button>

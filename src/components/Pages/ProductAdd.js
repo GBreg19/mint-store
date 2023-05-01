@@ -6,6 +6,7 @@ import Container from "../UI/Container";
 import useForm from "../../hooks/useForm";
 import { useSelector } from "react-redux";
 import BreadCrumbs from "../Breadcrumbs/Breadcrumbs";
+import Card from "../Layout/Card";
 
 const ProductAdd = ({ data }) => {
   const {
@@ -106,12 +107,12 @@ const ProductAdd = ({ data }) => {
 
   return (
     <Fragment>
-      <div className="w-9/12 m-auto py-20 px-40 bg-gray-200 flex items-center justify-between">
-        <h1 className="text-4xl font-robotoLight text-center">
+      <Card>
+        <h1 className="md:text-4xl text-2xl font-robotoLight text-center">
           Add Your Product Here
         </h1>
-          <BreadCrumbs items={data} />
-      </div>
+        <BreadCrumbs items={data} />
+      </Card>
       <Container>
         <form onSubmit={onSubmitHandler}>
           <h1 className="text-center text-2xl font-robotoBold">Add Product</h1>

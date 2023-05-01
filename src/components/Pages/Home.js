@@ -5,9 +5,11 @@ import Container from "../UI/Container";
 import cover from "../../Images/cover.jpg";
 
 const Home = () => {
+
   return (
     <Container className="pt-0">
       <Slider />
+
       <div className="w-2/3 text-center m-auto pt-5 pb-16">
         <h1 className="font-danc text-5xl tracking-wider mb-10">Mint</h1>
         <p className="font-robotoLight font-bold tracking-wide leading-6">
