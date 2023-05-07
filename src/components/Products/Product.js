@@ -8,8 +8,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { onEdit } from "../../slices/formSlice";
 
-const Product = ({ item, data, setData }) => {
-  const [isWindowOpen, setIsWindowOpen] = useState(false);
+const Product = ({ item, data, setData, className }) => {
+    const [isWindowOpen, setIsWindowOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate(); 
 
@@ -46,7 +46,7 @@ const Product = ({ item, data, setData }) => {
   };
 
   return (
-    <div className="lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 duration-1000 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative pt-5">
+    <div className={`lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 duration-1000 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 relative pt-5 ${className ? className : ''}`}>
       <div className="2xl:px-10 px-5 pb-5 flex flex-col justify-between h-56">
         <div className="flex">
           <span className="basis-6/12 mr-10">
@@ -91,7 +91,7 @@ const Product = ({ item, data, setData }) => {
           ...
         </button>
         {isWindowOpen && (
-          <div className="absolute flex justify-between top-0 right-0 bg-gray-200 p-2 w-[90px] duration-1000 rounded-tr-lg rounded-bl-sm font-robotoLight transform transition duration-500">
+          <div className="absolute flex justify-between top-0 right-0 bg-gray-200 p-2 w-[90px] rounded-tr-lg rounded-bl-sm font-robotoLight transform transition duration-500">
             <button title="Edit" onClick={() => onEditHandler(item.id)}>
               <FaPencilAlt />
             </button>

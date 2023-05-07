@@ -1,85 +1,35 @@
-import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
 import Product from "./Product";
+import useFetch from "../../hooks/useFetch";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [visibleItems, setVisibleItems] = useState(3);
   const [isActive, setIsActive] = useState("all");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsLoading(true);
-    (async () => {
-      try {
-        const response = await axios.get(`http://localhost:3004/products`);
-        setProducts(response.data);
-        setIsLoading(false);
-      } catch (err) {
-        console.log(err);
-        setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
-        setIsLoading(false);
-      }
-    })();
-  }, []);
-
-  const onAllProducts = async () => {
-    try {
-      const response = await axios.get(`http://localhost:3004/products`);
-      setProducts(response.data);
-    } catch (err) {
-      console.log(err);
-      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
-    }
-  };
-
-  const onDvd = async () => {
-    try {
-      const response = await axios.get(`http://localhost:3004/products`);
-      const filteredArr = response.data.filter((x) => x.typeSwitcher === "dvd");
-      setProducts(filteredArr);
-    } catch (err) {
-      console.log(err);
-      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
-    }
-  };
-
-  const onBooks = async () => {
-    try {
-      const response = await axios.get(`http://localhost:3004/products`);
-      const filteredArr = response.data.filter(
-        (x) => x.typeSwitcher === "book"
-      );
-      setProducts(filteredArr);
-    } catch (err) {
-      console.log(err);
-      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
-    }
-  };
-
-  const onFurniture = async () => {
-    try {
-      const response = await axios.get(`http://localhost:3004/products`);
-      const filteredArr = response.data.filter(
-        (x) => x.typeSwitcher === "furniture"
-      );
-      setProducts(filteredArr);
-    } catch (err) {
-      console.log(err);
-      setError("Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004");
-    }
-  };
+  const {
+    onAllProducts,
+    onDvd,
+    onBooks,
+    onFurniture,
+    products,
+    setProducts,
+    error,
+    visibleItems,
+    setVisibleItems,
+  } = useFetch();
 
   const onLoadMore = () => {
     setVisibleItems((prevState) => (prevState += 3));
   };
 
   if (error) {
-    return <div className="m-auto text-center w-94 text-red-500 font-robotoBold">{error}</div>;
+    return (
+      <div className="m-auto text-center w-94 text-red-500 font-robotoBold">
+        {error}
+      </div>
+    );
   }
 
   return (
