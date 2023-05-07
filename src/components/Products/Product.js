@@ -53,7 +53,7 @@ const Product = ({ item, data, setData, className }) => {
             <h3 className="border-b-2 border-white-900 pb-1 mb-3 mr-5">
               Title
             </h3>
-            <h5 className="text-lg font-semibold tracking-tight text-gray-900 dark:text-white font-robotoBold">
+            <h5 className="font-semibold tracking-tight text-gray-900 dark:text-white font-robotoBold">
               {item.name}
             </h5>
           </span>

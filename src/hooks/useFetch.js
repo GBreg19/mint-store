@@ -6,6 +6,8 @@ const useFetch = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [visibleItems, setVisibleItems] = useState(3);
+  const [fromPrice, setFromPrice] = useState('');
+  const [toPrice, setToPrice] = useState('');
 
   useEffect(() => {
     async function fetchProducts() {
@@ -80,7 +82,6 @@ const useFetch = () => {
     }
   };
 
-
   const onDefault = async () => {
     try {
       const response = await axios.get(`http://localhost:3004/products`);
@@ -116,7 +117,37 @@ const useFetch = () => {
       setError(
         "Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004"
       );
-    }}
+    }
+  };
+
+  const onFromHandler = (e) => {
+    const value = e.target.value;
+    setFromPrice(value);
+  };
+  const onToHandler = (e) => {
+    const value = e.target.value;
+    setToPrice(value);
+  };
+
+  const onPriceFilter = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.get(`http://localhost:3004/products`);
+      const filteredByPrice = response.data.filter(
+        (product) => product.price > fromPrice && product.price < toPrice
+      );
+      setProducts(filteredByPrice);
+    } catch (err) {
+      console.log(err);
+      setError(
+        "Error fetching products. To fetch data run this command - json-server --watch db.json --port 3004"
+      );
+    }
+
+    setFromPrice('')
+    setToPrice('')
+  };
 
   return {
     onAllProducts,
@@ -131,7 +162,14 @@ const useFetch = () => {
     setProducts,
     onDefault,
     onPriceLow,
-    onPriceHigh
+    onPriceHigh,
+    onPriceFilter,
+    onFromHandler,
+    onToHandler,
+    setFromPrice,
+    setToPrice,
+    fromPrice,
+    toPrice,
   };
 };
 

@@ -13,7 +13,7 @@ const Products = () => {
   const [currPage, setCurrPage] = useState(1);
   const [isActive, setIsActive] = useState("all");
   const navigate = useNavigate();
-  
+
   const {
     onAllProducts,
     onDvd,
@@ -26,6 +26,11 @@ const Products = () => {
     onDefault,
     onPriceLow,
     onPriceHigh,
+    onPriceFilter,
+    onFromHandler,
+    onToHandler,
+    fromPrice,
+    toPrice
   } = useFetch();
 
   // const onLoadPage = (index) => {
@@ -101,30 +106,38 @@ const Products = () => {
               </ul>
             </div>
             <div>
-              <h3 className="font-robotoBold mb-5">Price</h3>
-              <div className="relative">
-                <label>From</label>
-                <Input
-                  type="number"
-                  className="pl-5 rounded-none"
-                  placeholder="0"
-                />
-                <span className="absolute top-[35px] left-1">
-                  <FaDollarSign className="text-black/30" />
-                </span>
-              </div>
-              <div className="relative">
-                <label>To</label>
-                <Input
-                  type="number"
-                  className="pl-5 rounded-none"
-                  placeholder="90"
-                />
-                <span className="absolute top-[35px] left-1">
-                  <FaDollarSign className="text-black/30" />
-                </span>
-              </div>
-              <Button className="mt-1 rounded-none">Filter</Button>
+              <form onSubmit={onPriceFilter}>
+                <h3 className="font-robotoBold mb-5">Price</h3>
+                <div className="relative">
+                  <label>From</label>
+                  <Input
+                    type="number"
+                    value={fromPrice}
+                    className="pl-5 rounded-none"
+                    placeholder="0"
+                    onChange={(event) => onFromHandler(event)}
+                  />
+                  <span className="absolute top-[35px] left-1">
+                    <FaDollarSign className="text-black/30" />
+                  </span>
+                </div>
+                <div className="relative">
+                  <label>To</label>
+                  <Input
+                    type="number"
+                    value={toPrice}
+                    className="pl-5 rounded-none"
+                    placeholder="90"
+                    onChange={(event) => onToHandler(event)}
+                  />
+                  <span className="absolute top-[35px] left-1">
+                    <FaDollarSign className="text-black/30" />
+                  </span>
+                </div>
+                <Button type="submit" className="mt-1 rounded-none">
+                  Filter
+                </Button>
+              </form>
             </div>
           </div>
           <div className="basis-10/12">
@@ -150,13 +163,15 @@ const Products = () => {
                       </button>
                     </li>
                     <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
-                      <button onClick={onPriceHigh}>Sort by price: high to low</button>
+                      <button onClick={onPriceHigh}>
+                        Sort by price: high to low
+                      </button>
                     </li>
                   </ul>
                 </div>
               </span>
             </div>
-            <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-rows gap-5 pt-10 place-items-center">
+            <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-rows gap-2 pt-10 place-items-center">
               {products.map((item) => {
                 return (
                   <Product
@@ -164,7 +179,7 @@ const Products = () => {
                     item={item}
                     data={products}
                     setData={setProducts}
-                    className="2xl:w-[300px] lg:w-64 w-60"
+                    className="2xl:w-[320px] lg:w-64 w-60"
                   />
                 );
               })}
