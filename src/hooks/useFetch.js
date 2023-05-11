@@ -6,8 +6,9 @@ const useFetch = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [visibleItems, setVisibleItems] = useState(3);
-  const [fromPrice, setFromPrice] = useState('');
-  const [toPrice, setToPrice] = useState('');
+  const [fromPrice, setFromPrice] = useState("");
+  const [toPrice, setToPrice] = useState("");
+  const [isActive, setIsActive] = useState("all");
 
   useEffect(() => {
     async function fetchProducts() {
@@ -85,7 +86,24 @@ const useFetch = () => {
   const onDefault = async () => {
     try {
       const response = await axios.get(`http://localhost:3004/products`);
-      setProducts(response.data);
+      if (isActive === "all") {
+        setProducts(response.data);
+      } else if (isActive === "dvd") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "dvd"
+        );
+        setProducts(filteredArr);
+      } else if (isActive === "books") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "book"
+        );
+        setProducts(filteredArr);
+      } else {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "furniture"
+        );
+        setProducts(filteredArr);
+      }
     } catch (err) {
       console.log(err);
       setError(
@@ -97,8 +115,29 @@ const useFetch = () => {
   const onPriceLow = async () => {
     try {
       const response = await axios.get(`http://localhost:3004/products`);
-      const onPriceLow = response.data.sort((x, y) => x.price - y.price);
-      setProducts(onPriceLow);
+      if (isActive === "all") {
+        const onPriceLow = response.data.sort((x, y) => x.price - y.price);
+        setProducts(onPriceLow);
+      } else if (isActive === "dvd") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "dvd"
+        );
+        const onPriceLow = filteredArr.sort((x, y) => x.price - y.price);
+        setProducts(onPriceLow);
+      } else if (isActive === "books") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "book"
+        );
+
+        const onPriceLow = filteredArr.sort((x, y) => x.price - y.price);
+        setProducts(onPriceLow);
+      } else {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "furniture"
+        );
+        const onPriceLow = filteredArr.sort((x, y) => x.price - y.price);
+        setProducts(onPriceLow);
+      }
     } catch (err) {
       console.log(err);
       setError(
@@ -110,8 +149,28 @@ const useFetch = () => {
   const onPriceHigh = async () => {
     try {
       const response = await axios.get(`http://localhost:3004/products`);
-      const onPriceLow = response.data.sort((x, y) => y.price - x.price);
-      setProducts(onPriceLow);
+      if (isActive === "all") {
+        const onPriceHigh = response.data.sort((x, y) => y.price - x.price);
+        setProducts(onPriceHigh);
+      } else if (isActive === "dvd") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "dvd"
+        );
+        const onPriceHigh = filteredArr.sort((x, y) => y.price - x.price);
+        setProducts(onPriceHigh);
+      } else if (isActive === "books") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "book"
+        );
+        const onPriceHigh = filteredArr.sort((x, y) => y.price - x.price);
+        setProducts(onPriceHigh);
+      } else {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "furniture"
+        );
+        const onPriceHigh = filteredArr.sort((x, y) => y.price - x.price);
+        setProducts(onPriceHigh);
+      }
     } catch (err) {
       console.log(err);
       setError(
@@ -134,10 +193,36 @@ const useFetch = () => {
 
     try {
       const response = await axios.get(`http://localhost:3004/products`);
-      const filteredByPrice = response.data.filter(
-        (product) => product.price > fromPrice && product.price < toPrice
-      );
-      setProducts(filteredByPrice);
+      if (isActive === "all") {
+        const filteredByPrice = response.data.filter(
+          (product) => parseFloat(product.price) >= fromPrice && parseFloat(product.price) <= toPrice
+        );
+        setProducts(filteredByPrice);
+      } else if (isActive === "dvd") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "dvd"
+        );
+        const filteredByPrice = filteredArr.filter(
+          (product) => parseFloat(product.price) >= fromPrice && parseFloat(product.price) <= toPrice
+        );
+        setProducts(filteredByPrice);
+      } else if (isActive === "book") {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "book"
+        );
+        const filteredByPrice = filteredArr.filter(
+          (product) => parseFloat(product.price) >= fromPrice && parseFloat(product.price) <= toPrice
+        );
+        setProducts(filteredByPrice);
+      } else {
+        const filteredArr = response.data.filter(
+          (x) => x.typeSwitcher === "furn"
+        );
+        const filteredByPrice = filteredArr.filter(
+          (product) => parseFloat(product.price) >= fromPrice && parseFloat(product.price) <= toPrice
+        );
+        setProducts(filteredByPrice);
+      }
     } catch (err) {
       console.log(err);
       setError(
@@ -145,8 +230,8 @@ const useFetch = () => {
       );
     }
 
-    setFromPrice('')
-    setToPrice('')
+    setFromPrice("");
+    setToPrice("");
   };
 
   return {
@@ -170,6 +255,8 @@ const useFetch = () => {
     setToPrice,
     fromPrice,
     toPrice,
+    isActive,
+    setIsActive,
   };
 };
 

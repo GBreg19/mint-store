@@ -1,11 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
 import Product from "./Product";
 import useFetch from "../../hooks/useFetch";
 
 const ProductList = () => {
-  const [isActive, setIsActive] = useState("all");
   const navigate = useNavigate();
 
   const {
@@ -18,6 +17,8 @@ const ProductList = () => {
     error,
     visibleItems,
     setVisibleItems,
+    isActive,
+    setIsActive
   } = useFetch();
 
   const onLoadMore = () => {

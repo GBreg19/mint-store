@@ -1,8 +1,6 @@
-import React, { Fragment, useEffect, useState } from "react";
-import axios from "axios";
+import React, { Fragment, useState } from "react";
 import Container from "../UI/Container";
 import Card from "../Layout/Card";
-import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import Product from "../Products/Product";
@@ -10,9 +8,7 @@ import { FaDollarSign, FaChevronDown } from "react-icons/fa";
 import useFetch from "../../hooks/useFetch";
 
 const Products = () => {
-  const [currPage, setCurrPage] = useState(1);
-  const [isActive, setIsActive] = useState("all");
-  const navigate = useNavigate();
+  // const [currPage, setCurrPage] = useState(1);
 
   const {
     onAllProducts,
@@ -30,7 +26,9 @@ const Products = () => {
     onFromHandler,
     onToHandler,
     fromPrice,
-    toPrice
+    toPrice,
+    isActive,
+    setIsActive,
   } = useFetch();
 
   // const onLoadPage = (index) => {
@@ -98,7 +96,7 @@ const Products = () => {
                     setIsActive("furn");
                   }}
                   className={`cursor-pointer ${
-                    isActive === "furn" ? "text-gray-500" : ""
+                    isActive === "furn" ? "text-gray-500 w" : ""
                   }`}
                 >
                   Furniture
@@ -143,7 +141,7 @@ const Products = () => {
           <div className="basis-10/12">
             <div className=" w-80 items-center px-4 flex justify-between relative">
               <span>
-                <p>{`Showing 1-${visibleItems} of ${products.length}`}</p>
+                <p>{`Showing 1-${products.length} of ${products.length}`}</p>
               </span>
               <div className="w-[2px] h-4 bg-black"></div>
               <span className="relative flex items-center group cursor-pointer">
