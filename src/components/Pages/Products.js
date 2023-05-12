@@ -5,9 +5,11 @@ import Button from "../UI/Button";
 import Input from "../UI/Input";
 import Product from "../Products/Product";
 import { FaDollarSign, FaChevronDown } from "react-icons/fa";
+import { AiOutlineSearch } from "react-icons/ai";
 import useFetch from "../../hooks/useFetch";
 
 const Products = () => {
+  const [searchQuery, setSearchQuery] = useState("");
   // const [currPage, setCurrPage] = useState(1);
 
   const {
@@ -34,6 +36,10 @@ const Products = () => {
   // const onLoadPage = (index) => {
   //   setProducts(dividedProducts[index]);
   // };
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   if (error) {
     return (
@@ -139,38 +145,55 @@ const Products = () => {
             </div>
           </div>
           <div className="basis-10/12">
-            <div className=" w-80 items-center px-4 flex justify-between relative">
-              <span>
-                <p>{`Showing 1-${products.length} of ${products.length}`}</p>
-              </span>
-              <div className="w-[2px] h-4 bg-black"></div>
-              <span className="relative flex items-center group cursor-pointer">
-                <a className="pr-2">Sort by: Default</a>
-                <FaChevronDown />
-                <div className="absolute z-10 top-full left-0 w-56 h-32 bg-white border border-1 border-black/10 shadow-md py-3 px-3 hidden group-hover:block">
-                  <ul className="h-full flex flex-col justify-between">
-                    <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
-                      <button onClick={onDefault}>Default sorting</button>
-                    </li>
-                    <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
-                      <button>Sort by latest</button>
-                    </li>
-                    <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
-                      <button onClick={onPriceLow}>
-                        Sort by price: low to high
-                      </button>
-                    </li>
-                    <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
-                      <button onClick={onPriceHigh}>
-                        Sort by price: high to low
-                      </button>
-                    </li>
-                  </ul>
-                </div>
+            <div className="flex justify-between">
+              <div className=" w-80 items-center px-4 flex justify-between relative">
+                <span>
+                  <p>{`Showing 1-${products.length} of ${products.length}`}</p>
+                </span>
+                <div className="w-[2px] h-4 bg-black"></div>
+                <span className="relative flex items-center group cursor-pointer">
+                  <a className="pr-2">Sort by: Default</a>
+                  <FaChevronDown />
+                  <div className="absolute z-10 top-full left-0 w-56 h-32 bg-white border border-1 border-black/10 shadow-md py-3 px-3 hidden group-hover:block">
+                    <ul className="h-full flex flex-col justify-between">
+                      <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
+                        <button onClick={onDefault}>Default sorting</button>
+                      </li>
+                      <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
+                        <button>Sort by latest</button>
+                      </li>
+                      <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
+                        <button onClick={onPriceLow}>
+                          Sort by price: low to high
+                        </button>
+                      </li>
+                      <li className="text-slate-600 hover:text-black cursor-pointer font-robotoReg text-sm">
+                        <button onClick={onPriceHigh}>
+                          Sort by price: high to low
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </span>
+              </div>
+              <span className="relative">
+                <Input
+                type='search'
+                  placeholder="Search products..."
+                  onChange={handleSearch}
+                  className="py-1 border-b-1"
+                />
+                <AiOutlineSearch className="text-xl absolute right-2 top-2" />
               </span>
             </div>
             <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-rows gap-2 pt-10 place-items-center">
-              {products.map((item) => {
+              {products.filter(product => {
+                if(!searchQuery.length){
+                  return product
+                } else if(product.name.toLowerCase().includes(searchQuery.toLowerCase())){ 
+                  return product
+                }
+              }).map((item) => {
                 return (
                   <Product
                     key={item.id}
