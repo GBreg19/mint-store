@@ -38,8 +38,9 @@ const Products = () => {
   // };
 
   const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
+    const {value} = e.target
+    setSearchQuery(value);
+  }
 
   if (error) {
     return (
@@ -146,11 +147,7 @@ const Products = () => {
           </div>
           <div className="basis-10/12">
             <div className="flex justify-between">
-              <div className=" w-80 items-center px-4 flex justify-between relative">
-                <span>
-                  <p>{`Showing 1-${products.length} of ${products.length}`}</p>
-                </span>
-                <div className="w-[2px] h-4 bg-black"></div>
+              <div className=" w-80 items-center px-4 relative">
                 <span className="relative flex items-center group cursor-pointer">
                   <a className="pr-2">Sort by: Default</a>
                   <FaChevronDown />
