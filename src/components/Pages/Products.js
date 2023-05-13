@@ -7,10 +7,14 @@ import Product from "../Products/Product";
 import { FaDollarSign, FaChevronDown } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import useFetch from "../../hooks/useFetch";
+import usePagination from "../../hooks/usePagination";
+import Pagination from "../Products/Pagination";
 
 const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
   // const [currPage, setCurrPage] = useState(1);
+  const { currPage, postsPerPage, lastPostIndex, firstPostIndex } =
+    usePagination();
 
   const {
     onAllProducts,
@@ -38,9 +42,9 @@ const Products = () => {
   // };
 
   const handleSearch = (e) => {
-    const {value} = e.target
+    const { value } = e.target;
     setSearchQuery(value);
-  }
+  };
 
   if (error) {
     return (
@@ -175,7 +179,7 @@ const Products = () => {
               </div>
               <span className="relative">
                 <Input
-                type='search'
+                  type="search"
                   placeholder="Search products..."
                   onChange={handleSearch}
                   className="py-1 border-b-1"
@@ -184,24 +188,32 @@ const Products = () => {
               </span>
             </div>
             <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-rows gap-2 pt-10 place-items-center">
-              {products.filter(product => {
-                if(!searchQuery.length){
-                  return product
-                } else if(product.name.toLowerCase().includes(searchQuery.toLowerCase())){ 
-                  return product
-                }
-              }).map((item) => {
-                return (
-                  <Product
-                    key={item.id}
-                    item={item}
-                    data={products}
-                    setData={setProducts}
-                    className="2xl:w-[320px] lg:w-64 w-60"
-                  />
-                );
-              })}
+              {products
+                .filter((product) => {
+                  if (!searchQuery.length) {
+                    return product;
+                  } else if (
+                    product.name
+                      .toLowerCase()
+                      .includes(searchQuery.toLowerCase())
+                  ) {
+                    return product;
+                  }
+                })
+                .slice(firstPostIndex, lastPostIndex)
+                .map((item) => {
+                  return (
+                    <Product
+                      key={item.id}
+                      item={item}
+                      data={products}
+                      setData={setProducts}
+                      className="2xl:w-[320px] lg:w-64 w-60"
+                    />
+                  );
+                })}
             </ul>
+            <Pagination />
             {/* <div className="flex justify-between w-2/12 m-auto mt-10">
               {dividedProducts.map((page, index) => {
                 return (

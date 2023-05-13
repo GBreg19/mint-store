@@ -21,13 +21,13 @@
     {
       "sku": "XHSD76234",
       "name": "Be Here Now",
-      "price": "18.99",
+      "price": "18.87",
       "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },
       "book": {
-        "weight": "0.8"
+        "weight": "0.9"
       },
       "furniture": {
         "height": "15",
@@ -161,6 +161,44 @@
         "length": ""
       },
       "id": 11
+    },
+    {
+      "sku": "OP12523",
+      "name": "Danya B. Fabric 5-Drawer Storage Dresser Chest with Steel Frame and Caster Wheels",
+      "price": "602",
+      "image": "",
+      "typeSwitcher": "furniture",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": ""
+      },
+      "furniture": {
+        "height": "38",
+        "width": "22",
+        "length": "11"
+      },
+      "id": 12
+    },
+    {
+      "sku": "KD947218",
+      "name": "Havana Occasional Rustic",
+      "price": "403",
+      "image": "",
+      "typeSwitcher": "furniture",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": ""
+      },
+      "furniture": {
+        "height": "25",
+        "width": "20",
+        "length": "56"
+      },
+      "id": 13
     }
   ]
 }
