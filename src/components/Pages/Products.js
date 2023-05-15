@@ -36,15 +36,12 @@ const Products = () => {
     isActive,
     setIsActive,
   } = useFetch();
-
-  // const onLoadPage = (index) => {
-  //   setProducts(dividedProducts[index]);
-  // };
-
   const handleSearch = (e) => {
     const { value } = e.target;
     setSearchQuery(value);
   };
+
+  console.log(products.slice(firstPostIndex, lastPostIndex));
 
   if (error) {
     return (
@@ -214,16 +211,6 @@ const Products = () => {
                 })}
             </ul>
             <Pagination />
-            {/* <div className="flex justify-between w-2/12 m-auto mt-10">
-              {dividedProducts.map((page, index) => {
-                return (
-                  <Button key={index} onClick={() => onLoadPage(index)}>
-                    {index + 1}
-                  </Button>
-                );
-              })}
-              <Button className="rounded-none">Next</Button>
-            </div> */}
           </div>
         </div>
       </Container>
