@@ -12,8 +12,7 @@ import Pagination from "../Products/Pagination";
 
 const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  // const [currPage, setCurrPage] = useState(1);
-  const { currPage, postsPerPage, lastPostIndex, firstPostIndex } =
+  const { setCurrPage, currPage, postsPerPage, lastPostIndex, firstPostIndex } =
     usePagination();
 
   const {
@@ -41,7 +40,7 @@ const Products = () => {
     setSearchQuery(value);
   };
 
-  console.log(products.slice(firstPostIndex, lastPostIndex));
+  console.log(currPage);
 
   if (error) {
     return (
@@ -210,7 +209,7 @@ const Products = () => {
                   );
                 })}
             </ul>
-            <Pagination />
+            <Pagination setCurrPage={setCurrPage} />
           </div>
         </div>
       </Container>
