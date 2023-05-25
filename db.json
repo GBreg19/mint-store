@@ -27,7 +27,7 @@
         "size": ""
       },
       "book": {
-        "weight": "0.9"
+        "weight": "0.8"
       },
       "furniture": {
         "height": "15",
@@ -42,7 +42,7 @@
       "price": "8.98",
       "typeSwitcher": "dvd",
       "dvd": {
-        "size": "300"
+        "size": "350"
       },
       "book": {
         "weight": ""
@@ -199,6 +199,25 @@
         "length": "56"
       },
       "id": 13
+    },
+    {
+      "sku": "JKSL0123",
+      "name": "LOTR",
+      "price": "23",
+      "image": "",
+      "typeSwitcher": "book",
+      "dvd": {
+        "size": ""
+      },
+      "book": {
+        "weight": "0.8"
+      },
+      "furniture": {
+        "height": "",
+        "width": "",
+        "length": ""
+      },
+      "id": 14
     }
   ]
 }

@@ -40,8 +40,6 @@ const Products = () => {
     setSearchQuery(value);
   };
 
-  console.log(currPage);
-
   if (error) {
     return (
       <div className="m-auto text-center w-94 text-red-500 font-robotoBold">

@@ -10,6 +10,7 @@ import Home from "./components/Pages/Home";
 import SidebarMenu from "./components/Layout/SidebarMenu";
 import Login from "./components/Pages/Login";
 import Products from "./components/Pages/Products";
+import About from "./components/Pages/About";
 
 function App() {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/products" element={<Products />}></Route>
+        <Route path="/about-us" element={<About data={breadCrumbs}/>}></Route>
         <Route
           exact
           path="/login"

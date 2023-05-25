@@ -91,11 +91,14 @@ const ProductAdd = ({ data }) => {
         (key) => inputs[key].length > 0
       ).length;
 
+      console.log(Object.keys(inputs))
+
       setValidate(
         inputValues.sku.length >= 1 &&
           inputValues.name.length >= 1 &&
           inputValues.price.length >= 1 &&
-          inputValues.typeSwitcher !== "typeSwitcher" &&
+          inputValues.typeSwitcher !== "typeSwitcher"
+           &&
           inputsLength > 0
       );
     }, 100);
