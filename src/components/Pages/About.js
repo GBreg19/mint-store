@@ -6,14 +6,13 @@ import { FaShoppingBag, FaPaypal, FaLocationArrow } from "react-icons/fa";
 import { BsStopwatch } from "react-icons/bs";
 import bg1 from "../../Images/bg1.jpg";
 
-const About = ({ data }) => {
+const About = () => {
   return (
     <Fragment>
       <Card>
         <h1 className="md:text-4xl text-2xl font-robotoLight text-center">
           About Us
         </h1>
-        <BreadCrumbs items={data} />
       </Card>
       <Container>
         <div className="relative overflow-hidden mb-20">

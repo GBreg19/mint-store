@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import BreadCrumbs from "../Breadcrumbs/Breadcrumbs";
 import Card from "../Layout/Card";
 
-const ProductAdd = ({ data }) => {
+const ProductAdd = () => {
   const {
     errorTxts,
     setErrorTxts,
@@ -114,7 +114,6 @@ const ProductAdd = ({ data }) => {
         <h1 className="md:text-4xl text-2xl font-robotoLight text-center">
           Add Your Product Here
         </h1>
-        <BreadCrumbs items={data} />
       </Card>
       <Container>
         <form onSubmit={onSubmitHandler}>

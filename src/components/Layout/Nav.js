@@ -27,7 +27,7 @@ const Nav = ({className}) => {
         About Us
       </li>
       <li
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/contact")}
         className="cursor-pointer font-robotoBold hover:text-sky-500 duration-300"
       >
         Contact

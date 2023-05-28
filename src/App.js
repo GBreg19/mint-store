@@ -11,15 +11,11 @@ import SidebarMenu from "./components/Layout/SidebarMenu";
 import Login from "./components/Pages/Login";
 import Products from "./components/Pages/Products";
 import About from "./components/Pages/About";
+import Contact from "./components/Pages/Contact";
 
 function App() {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
   const isClicked = useSelector((state) => state.cart.isClicked);
-
-  const [breadCrumbs, setBreadCrumbs] = useState([
-    { label: "Home", link: "/" },
-    { label: "Add Product" },
-  ]);
 
   const onSideBarMenuClick = (resp) => {
     setIsBurgerClicked(resp);
@@ -34,17 +30,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/products" element={<Products />}></Route>
-        <Route path="/about-us" element={<About data={breadCrumbs}/>}></Route>
-        <Route
-          exact
-          path="/login"
-          element={<Login data={breadCrumbs} />}
-        ></Route>
-        <Route
-          exact
-          path="/product-add"
-          element={<ProductAdd data={breadCrumbs} />}
-        ></Route>
+        <Route path="/about-us" element={<About />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        <Route exact path="/login" element={<Login />}></Route>
+        <Route exact path="/product-add" element={<ProductAdd />}></Route>
       </Routes>
       <Footer />
     </Fragment>
