@@ -8,6 +8,7 @@ import { HiOutlinePhone } from "react-icons/hi";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import GoogleMaps from "../Layout/GoogleMaps";
 
 const Contact = () => {
   return (
@@ -119,6 +120,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="mt-20">
+          <GoogleMaps />
         </div>
       </Container>
     </Fragment>
