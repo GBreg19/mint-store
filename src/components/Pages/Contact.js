@@ -5,6 +5,9 @@ import { FaRegClock } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { HiOutlinePhone } from "react-icons/hi";
+import Input from "../UI/Input";
+import Button from "../UI/Button";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -69,6 +72,49 @@ const Contact = () => {
                 </div>
                 <span>
                   <p>18 Some St, Tbilisi, Georgia</p>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-between gap-20 mt-10">
+            <div className="w-full">
+              <form>
+                <h1 className="text-2xl font-medium font-robotoReg mb-2">
+                  Get in touch
+                </h1>
+                <p className="font-robotoReg mb-5">Write us a letter !</p>
+                <div className="flex gap-5">
+                  <Input placeholder="Name *" className="py-3" />
+                  <Input type="email" placeholder="Email *" className="py-3" />
+                </div>
+                <Input placeholder="Subject *" className="py-3" />
+                <textarea
+                  placeholder="Text goes here..."
+                  className="w-full h-40 form-control block px-1 py-1.5 text-base font-normal text-gray-70 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out mb-3 focus:text-gray-700 focus:bg-white focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                />
+                <Button className="rounded-none">Submit</Button>
+              </form>
+            </div>
+            <div className="w-1/2">
+              <div className="mb-5">
+                <h1 className="text-2xl font-medium font-robotoReg mb-2">
+                  Our Address
+                </h1>
+                <p>
+                  Duis aute irure dolor in reprehenderit ioluptate velit esse
+                  cillum dolore pariatur.
+                </p>
+              </div>
+              <div className="mb-20">
+                <p>18 Some St, Tbilisi, Georgia</p>
+                <p>office@mint.com</p>
+              </div>
+              <div className="flex items-center">
+                <p>Follow Us On Social</p>
+                <span className="flex ml-16 w-20 justify-between">
+                  <FaFacebookF className="hover:text-sky-700 cursor-pointer" />
+                  <FaTwitter className="hover:text-sky-500 cursor-pointer" />
+                  <FaInstagram className="hover:text-red-500 cursor-pointer" />
                 </span>
               </div>
             </div>
