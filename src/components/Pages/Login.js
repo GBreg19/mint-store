@@ -16,7 +16,6 @@ const Login = ({ data }) => {
         <h1 className="md:text-4xl text-2xl font-robotoLight text-center">
           Login
         </h1>
-        <BreadCrumbs items={data} />
       </Card>
       <Container>
         <div className="md:w-[500px] w-[400px] m-auto p-5">
