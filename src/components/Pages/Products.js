@@ -12,7 +12,7 @@ import Pagination from "../Products/Pagination";
 
 const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { setCurrPage, currPage, postsPerPage, lastPostIndex, firstPostIndex } =
+  const { setCurrPage, lastPostIndex, firstPostIndex } =
     usePagination();
 
   const {
@@ -23,7 +23,6 @@ const Products = () => {
     products,
     setProducts,
     error,
-    visibleItems,
     onDefault,
     onPriceLow,
     onPriceHigh,
@@ -147,7 +146,7 @@ const Products = () => {
             <div className="flex justify-between">
               <div className=" w-80 items-center px-4 relative">
                 <span className="relative flex items-center group cursor-pointer">
-                  <a className="pr-2">Sort by: Default</a>
+                  <a href='i' className="pr-2">Sort by: Default</a>
                   <FaChevronDown />
                   <div className="absolute z-10 top-full left-0 w-56 h-32 bg-white border border-1 border-black/10 shadow-md py-3 px-3 hidden group-hover:block">
                     <ul className="h-full flex flex-col justify-between">

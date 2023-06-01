@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import BreadCrumbs from "../Breadcrumbs/Breadcrumbs";
 import Card from "../Layout/Card";
 import Container from "../UI/Container";
 import { FaShoppingBag, FaPaypal, FaLocationArrow } from "react-icons/fa";

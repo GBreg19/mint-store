@@ -76,7 +76,7 @@ const Header = ({ onSideBurger }) => {
             <button onClick={() => navigate('/login')}>
               <FaUser className="text-xl hover:text-sky-500" />
             </button>
-            <button>
+            <button onClick={() => navigate('/wishlist')}>
               <FaHeart className="text-xl hover:text-sky-500" />
             </button>
             <button

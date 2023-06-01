@@ -1,7 +1,8 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartItems: [],
+  wishlistItems: [],
   isClicked: false,
   amount: 1,
   totalQuantity: 0,
@@ -12,7 +13,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: initialState,
   reducers: {
-    addToCart: (state, action) => {
+    addToCart (state, action) {
       const cartItem = action.payload;
       const existingItem = state.cartItems.findIndex(
         (item) => item.id === cartItem.id

@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Container from "../UI/Container";
 import Card from "../Layout/Card";
-import BreadCrumbs from "../Breadcrumbs/Breadcrumbs";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 
@@ -77,7 +76,7 @@ const Login = ({ data }) => {
                     <input type="checkbox" />
                     <label className="ml-3">Remember me</label>
                   </span>
-                  <a className="hover:text-sky-500 cursor-pointer">
+                  <a href="" className="hover:text-sky-500 cursor-pointer">
                     Forgot your password ?
                   </a>
                 </span>

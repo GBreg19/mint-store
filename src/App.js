@@ -12,6 +12,7 @@ import Login from "./components/Pages/Login";
 import Products from "./components/Pages/Products";
 import About from "./components/Pages/About";
 import Contact from "./components/Pages/Contact";
+import Wishlist from "./components/Pages/Wishlist";
 
 function App() {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/products" element={<Products />}></Route>
         <Route path="/about-us" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
         <Route exact path="/product-add" element={<ProductAdd />}></Route>
       </Routes>

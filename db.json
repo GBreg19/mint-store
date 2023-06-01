@@ -3,13 +3,13 @@
     {
       "sku": "XYZ12345",
       "name": "Lord of the Rings",
-      "price": "25.50",
+      "price": "25.90",
       "typeSwitcher": "book",
       "dvd": {
         "size": ""
       },
       "book": {
-        "weight": "1.1"
+        "weight": "1.5"
       },
       "furniture": {
         "height": "",
@@ -201,21 +201,21 @@
       "id": 13
     },
     {
-      "sku": "JKSL0123",
-      "name": "LOTR",
+      "sku": "dasdas",
+      "name": "dasds",
       "price": "23",
       "image": "",
-      "typeSwitcher": "book",
+      "typeSwitcher": "furniture",
       "dvd": {
         "size": ""
       },
       "book": {
-        "weight": "0.8"
+        "weight": ""
       },
       "furniture": {
-        "height": "",
-        "width": "",
-        "length": ""
+        "height": "32`1",
+        "width": "324",
+        "length": "553"
       },
       "id": 14
     }

@@ -5,7 +5,6 @@ import Input from "../UI/Input";
 import Container from "../UI/Container";
 import useForm from "../../hooks/useForm";
 import { useSelector } from "react-redux";
-import BreadCrumbs from "../Breadcrumbs/Breadcrumbs";
 import Card from "../Layout/Card";
 
 const ProductAdd = () => {
@@ -21,7 +20,6 @@ const ProductAdd = () => {
 
   const inputValues = useSelector((state) => state.form.inputValues);
 
-  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -91,7 +89,7 @@ const ProductAdd = () => {
         (key) => inputs[key].length > 0
       ).length;
 
-      console.log(Object.keys(inputs))
+      console.log(inputs)
 
       setValidate(
         inputValues.sku.length >= 1 &&
