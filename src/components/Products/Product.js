@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
-import Button from "../UI/Button";
-import { addToCart, calculateTotal } from "../../slices/cartSlice";
+import {
+  addToCart,
+  addToWishlist,
+  calculateTotal,
+} from "../../slices/cartSlice";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
@@ -44,11 +47,18 @@ const Product = ({ item, data, setData, className }) => {
     dispatch(calculateTotal());
   };
 
+  const onAddWishlistHandler = (id) => {
+    const addedItem = data.find((item) => item.id === id);
+    dispatch(addToWishlist(addedItem));
+  };
+
   return (
     <div
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
-      className="lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  pt-5 2xl:px-10 px-5 pb-5 flex flex-col justify-between h-56 transition-transform duration-300 ease-in-out relative"
+      className={`lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  pt-5 2xl:px-10 px-5 pb-5 flex flex-col justify-between h-56 transition-transform duration-300 ease-in-out relative ${
+        className ? className : ""
+      }`}
     >
       <div
         className={`flex flex-col justify-between h-56 ${
@@ -96,12 +106,18 @@ const Product = ({ item, data, setData, className }) => {
         <div className="w-36 h-10 flex justify-between place-self-center m-auto">
           <div>
             <button onClick={() => onAddCartHandler(item.id)}>
-              <BiCartAdd className="text-5xl hover:text-sky-500" title="Add to Cart"/>
+              <BiCartAdd
+                className="text-5xl hover:text-sky-500"
+                title="Add to Cart"
+              />
             </button>
           </div>
           <div>
-            <button>
-              <BiHeart className="text-5xl hover:text-sky-500" title="Add to Wishlist" />
+            <button onClick={() => onAddWishlistHandler(item.id)}>
+              <BiHeart
+                className="text-5xl hover:text-sky-500"
+                title="Add to Wishlist"
+              />
             </button>
           </div>
         </div>
@@ -110,7 +126,9 @@ const Product = ({ item, data, setData, className }) => {
         <button
           onClick={() => setIsWindowOpen(true)}
           title="Options"
-          className={`absolute -top-2 right-3 text-4xl font-robotoReg ${isHovered ? 'hidden' : ''}`}
+          className={`absolute -top-2 right-3 text-4xl font-robotoReg ${
+            isHovered ? "hidden" : ""
+          }`}
         >
           ...
         </button>

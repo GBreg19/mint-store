@@ -68,6 +68,15 @@ export const cartSlice = createSlice({
       }, 0);
       state.totalAmount = total.toFixed(2);
     },
+    addToWishlist (state,action) {
+      state.wishlistItems = [...state.wishlistItems, action.payload];
+    },
+    removeFromWishlist (state, action) {
+      state.wishlistItems = state.wishlistItems.filter((item) => item.id !== action.payload)
+    },
+    clearWishlist (state) {
+      state.wishlistItems = []
+    }
   },
 });
 
@@ -78,6 +87,9 @@ export const {
   decrement,
   removeFromCart,
   calculateTotal,
+  addToWishlist,
+  removeFromWishlist,
+  clearWishlist
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
