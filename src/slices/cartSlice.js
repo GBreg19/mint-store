@@ -13,7 +13,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState: initialState,
   reducers: {
-    addToCart (state, action) {
+    addToCart(state, action) {
       const cartItem = action.payload;
       const existingItem = state.cartItems.findIndex(
         (item) => item.id === cartItem.id
@@ -60,7 +60,7 @@ export const cartSlice = createSlice({
       state.cartItems = state.cartItems.filter(
         (item) => item.id !== action.payload.id
       );
-      state.totalQuantity = state.cartItems.length
+      state.totalQuantity = state.cartItems.length;
     },
     calculateTotal: (state) => {
       const total = state.cartItems.reduce((total, item) => {
@@ -68,15 +68,24 @@ export const cartSlice = createSlice({
       }, 0);
       state.totalAmount = total.toFixed(2);
     },
-    addToWishlist (state,action) {
-      state.wishlistItems = [...state.wishlistItems, action.payload];
+    addToWishlist(state, action) {
+      const existingItem = state.wishlistItems.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (existingItem !== -1) {
+        return
+      } else {
+        state.wishlistItems = [...state.wishlistItems, action.payload];
+      }
     },
-    removeFromWishlist (state, action) {
-      state.wishlistItems = state.wishlistItems.filter((item) => item.id !== action.payload)
+    removeFromWishlist(state, action) {
+      state.wishlistItems = state.wishlistItems.filter(
+        (item) => item.id !== action.payload
+      );
     },
-    clearWishlist (state) {
-      state.wishlistItems = []
-    }
+    clearWishlist(state) {
+      state.wishlistItems = [];
+    },
   },
 });
 
@@ -89,7 +98,7 @@ export const {
   calculateTotal,
   addToWishlist,
   removeFromWishlist,
-  clearWishlist
+  clearWishlist,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

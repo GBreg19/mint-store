@@ -10,9 +10,10 @@ import Nav from "./Nav";
 const Header = ({ onSideBurger }) => {
   const navigate = useNavigate();
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const wishlistItems = useSelector((state) => state.cart.wishlistItems)
   const dispatch = useDispatch();
   const [isFixed, setIsFixed] = useState(false);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 0) {
@@ -76,8 +77,11 @@ const Header = ({ onSideBurger }) => {
             <button onClick={() => navigate('/login')}>
               <FaUser className="text-xl hover:text-sky-500" />
             </button>
-            <button onClick={() => navigate('/wishlist')}>
+            <button className="relative" onClick={() => navigate('/wishlist')}>
               <FaHeart className="text-xl hover:text-sky-500" />
+              <span className="absolute px-1 text-xs text-white font-robotoBold bg-sky-500 rounded-full top-2 -translate-y-2/4 -right-2">
+                {wishlistItems.length ? wishlistItems.length : ''}
+              </span>
             </button>
             <button
               className="relative"
