@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../UI/Container";
 import Input from "../UI/Input";
 import { FaArrowRight } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -41,7 +42,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="">
+        <div className="md:block hidden">
           <h2 className="font-robotoBold text-lg">Social Media</h2>
           <ul className="mt-2">
             <li className="font-robotoReg cursor-pointer leading-8 hover:text-sky-500">
@@ -68,6 +69,23 @@ const Footer = () => {
               placeholder="Your email address"
               className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-3 px-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             />
+          </div>
+          <div className="md:hidden flex w-full justify-between items-center">
+            <h2 className="font-robotoReg">Social Media</h2>
+            <ul className="flex items-center w-1/3 justify-between">
+              <li className="font-robotoReg cursor-pointer leading-8 hover:text-sky-500">
+                <FaFacebookF />
+              </li>
+              <li className="font-robotoReg cursor-pointer leading-8 hover:text-sky-500">
+                <FaInstagram />
+              </li>
+              <li className="font-robotoReg cursor-pointer leading-8 hover:text-sky-500">
+                <FaTwitter />
+              </li>
+              <li className="font-robotoReg cursor-pointer leading-8 hover:text-sky-500">
+                <FaYoutube />
+              </li>
+            </ul>
           </div>
           <ul className="flex flex-row justify-between">
             <li className="font-robotoReg cursor-pointer leading-8 hover:text-sky-500">

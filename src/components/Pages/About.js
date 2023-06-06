@@ -45,9 +45,9 @@ const About = () => {
             and experience the future of shopping today.
           </p>
         </div>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
           <div>
-            <span className="flex items-center font-robotoReg justify-between mb-5 w-3/4">
+            <span className="flex items-center font-robotoReg justify-between mb-5 w-52">
               <FaShoppingBag className="text-3xl" />
               <h3 className="text-xl">Shop online</h3>
             </span>
@@ -57,7 +57,7 @@ const About = () => {
             </p>
           </div>
           <div>
-            <span className="flex items-center font-robotoReg justify-between mb-5 w-3/4">
+            <span className="flex items-center font-robotoReg justify-between mb-5 w-52">
               <FaPaypal className="text-3xl" />
               <h3 className="text-xl">Payment methods</h3>
             </span>
@@ -67,7 +67,7 @@ const About = () => {
             </p>
           </div>
           <div>
-            <span className="flex items-center font-robotoReg justify-between mb-5 w-3/4">
+            <span className="flex items-center font-robotoReg justify-between mb-5 w-52">
               <FaLocationArrow className="text-3xl" />
               <h3 className="text-xl">Free shipping</h3>
             </span>
@@ -77,7 +77,7 @@ const About = () => {
             </p>
           </div>
           <div>
-            <span className="flex items-center font-robotoReg justify-between mb-5 w-3/4">
+            <span className="flex items-center font-robotoReg justify-between mb-5 w-52">
               <BsStopwatch className="text-3xl" />
               <h3 className="text-xl">Return policy</h3>
             </span>
@@ -86,9 +86,9 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-20 mt-10 h-44">
-          <div className="flex flex-col justify-between h-ful">
-            <h1 className="font-robotoBold text-xl">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-20 mt-10 w-full">
+          <div className="flex flex-col justify-between lg:w-full w-11/12">
+            <h1 className="font-robotoBold text-xl mb-5">
               Functionality meets perfection
             </h1>
             <p className="leading-[26px] font-robotoReg">
@@ -100,7 +100,7 @@ const About = () => {
               aliquam.
             </p>
           </div>
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between lg:h-full md:h-1/2 h-48 lg:w-full w-11/12 " >
             <div>
               <span className="flex justify-between mb-3 font-robotoBold">
                 <h3>Creativity</h3>

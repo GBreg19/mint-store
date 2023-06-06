@@ -7,7 +7,7 @@ import {
   calculateTotal,
 } from "../../slices/cartSlice";
 import { FaTrash, FaPencilAlt } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineSetting } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { onEdit } from "../../slices/formSlice";
 import { BiCartAdd, BiHeart } from "react-icons/bi";
@@ -103,7 +103,7 @@ const Product = ({ item, data, setData, className }) => {
           isHovered ? "opacity-100 z-50" : "opacity-0"
         }`}
       >
-        <div className="w-36 h-10 flex justify-between place-self-center m-auto">
+        <div className="w-44 h-10 flex justify-between place-self-center m-auto">
           <div>
             <button onClick={() => onAddCartHandler(item.id)}>
               <BiCartAdd
@@ -120,28 +120,27 @@ const Product = ({ item, data, setData, className }) => {
               />
             </button>
           </div>
+          <div>
+            <button onClick={() => setIsWindowOpen(!isWindowOpen)}>
+              <AiOutlineSetting
+                className="text-5xl hover:text-sky-500"
+                title="Settings"
+              />
+            </button>
+          </div>
         </div>
       </div>
       <div>
-        <button
-          onClick={() => setIsWindowOpen(true)}
-          title="Options"
-          className={`absolute -top-2 right-3 text-4xl font-robotoReg ${
-            isHovered ? "hidden" : ""
-          }`}
-        >
-          ...
-        </button>
-        {isWindowOpen && (
-          <div className="absolute flex justify-between top-0 right-0 bg-gray-200 p-2 w-[90px] rounded-tr-lg rounded-bl-sm font-robotoLight transform transition duration-500">
+        {isWindowOpen && isHovered && (
+          <div className="absolute flex justify-between top-0 right-0 p-2 w-[100px] rounded-tr-lg rounded-bl-sm font-robotoLight transform transition duration-500 z-50 $">
             <button title="Edit" onClick={() => onEditHandler(item.id)}>
-              <FaPencilAlt />
+              <FaPencilAlt className="text-xl" />
             </button>
-            <button title="Remove" onClick={() => onDeleteHandler(item.id)}>
+            <button className="text-[19px]" title="Remove" onClick={() => onDeleteHandler(item.id)}>
               <FaTrash />
             </button>
             <button title="Close" onClick={() => setIsWindowOpen(false)}>
-              <AiOutlineClose className="text-xl" />
+              <AiOutlineClose className="text-2xl" />
             </button>
           </div>
         )}

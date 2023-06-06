@@ -57,7 +57,7 @@ const Products = () => {
       </Card>
       <Container>
         <div className="flex">
-          <div className="basis-2/12">
+          <div className="2xl:basis-2/12 basis-4/12">
             <div className="border-b-[1px] border-black/10 pb-8 mb-8">
               <h3 className="font-robotoBold mb-5">Categories</h3>
               <ul className="flex flex-col gap-1  ">
@@ -180,7 +180,7 @@ const Products = () => {
                 <AiOutlineSearch className="text-xl absolute right-2 top-2" />
               </span>
             </div>
-            <ul className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid-flow-rows gap-2 pt-10 place-items-center">
+            <ul className="grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 grid-flow-rows gap-2 pt-10 place-items-center">
               {products
                 .filter((product) => {
                   if (!searchQuery.length) {
