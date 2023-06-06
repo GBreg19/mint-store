@@ -22,7 +22,7 @@ const Wishlist = () => {
       <Container>
         {wishlistItems.length ? (
           <>
-            <div className="grid grid-cols-4 bg-gray-200 py-2 px-3">
+            <div className="grid grid-cols-4 overflow-x-auto w-full bg-gray-200 py-2 px-3">
               <h1>Product Title</h1>
               <h1>Unit Price</h1>
             </div>

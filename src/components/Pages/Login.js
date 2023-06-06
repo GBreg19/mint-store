@@ -17,8 +17,8 @@ const Login = ({ data }) => {
         </h1>
       </Card>
       <Container>
-        <div className="md:w-[500px] w-[400px] m-auto p-5">
-          <span className="flex justify-between md:w-2/5 w-2/5 m-auto mb-10">
+        <div className="w-full md:w-1/2 m-auto p-5">
+          <span className="flex justify-between w-48 m-auto mb-10">
             <button onClick={() => setRegisterIsClicked(false)}>
               <h1 className="font-robotoBold md:text-2xl text-xl">Login</h1>
             </button>

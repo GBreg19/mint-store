@@ -20,7 +20,7 @@ const Contact = () => {
       </Card>
       <Container>
         <div>
-          <div className="grid grid-cols-4 gap-10 pb-14 border-b-2 border-gray-200">
+          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 pb-14 border-b-2 border-gray-200">
             <div className="flex w-5/6">
               <div className="mr-5">
                 <FaRegClock className="text-3xl" />
@@ -96,7 +96,7 @@ const Contact = () => {
                 <Button className="rounded-none">Submit</Button>
               </form>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 md:block hidden">
               <div className="mb-5">
                 <h1 className="text-2xl font-medium font-robotoReg mb-2">
                   Our Address

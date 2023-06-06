@@ -11,7 +11,7 @@ const WishlistItem = ({ data }) => {
       <li className="grid grid-cols-4 border-b border-gray-300 py-5 px-3 items-center">
         <h1>{data.name}</h1>
         <h1>{data.price}</h1>
-        <Button className="w-40">Buy Now</Button>
+        <Button className="sm:w-40 w-30">Buy Now</Button>
         <button className="justify-self-end" onClick={() => dispatch(removeFromWishlist(data.id))}>
           <BiX className="text-3xl" />
         </button>
