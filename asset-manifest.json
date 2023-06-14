@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mint-store/static/css/main.466e74a4.css",
-    "main.js": "/mint-store/static/js/main.0028f0af.js",
+    "main.css": "/mint-store/static/css/main.6faa36a5.css",
+    "main.js": "/mint-store/static/js/main.e7e60f5c.js",
     "static/media/books.jpg": "/mint-store/static/media/books.9f19739f95dbbabe6417.jpg",
     "static/media/bg1.jpg": "/mint-store/static/media/bg1.ca1d6b2bd951252f4123.jpg",
     "static/media/cover.jpg": "/mint-store/static/media/cover.5bdc136642b2a593df50.jpg",
@@ -15,11 +15,11 @@
     "static/media/DancingScript-SemiBold.ttf": "/mint-store/static/media/DancingScript-SemiBold.20079cfc865e089a9cee.ttf",
     "static/media/DancingScript-Bold.ttf": "/mint-store/static/media/DancingScript-Bold.7b161e4b34f18d21d23e.ttf",
     "index.html": "/mint-store/index.html",
-    "main.466e74a4.css.map": "/mint-store/static/css/main.466e74a4.css.map",
-    "main.0028f0af.js.map": "/mint-store/static/js/main.0028f0af.js.map"
+    "main.6faa36a5.css.map": "/mint-store/static/css/main.6faa36a5.css.map",
+    "main.e7e60f5c.js.map": "/mint-store/static/js/main.e7e60f5c.js.map"
   },
   "entrypoints": [
-    "static/css/main.466e74a4.css",
-    "static/js/main.0028f0af.js"
+    "static/css/main.6faa36a5.css",
+    "static/js/main.e7e60f5c.js"
   ]
 }
