@@ -56,7 +56,7 @@ const Product = ({ item, data, setData, className }) => {
     <div
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
-      className={`lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700  pt-5 2xl:px-10 px-5 pb-5 flex flex-col justify-between h-56 transition-transform duration-300 ease-in-out relative ${
+      className={`lg:py-2 bg-white 2xl:w-96 lg:w-80 w-72 border border-gray-200 hover:bg-gray-100 rounded-lg shadow pt-5 2xl:px-10 px-5 pb-5 flex flex-col justify-between h-56 transition-transform duration-300 ease-in-out relative ${
         className ? className : ""
       }`}
     >
@@ -70,7 +70,7 @@ const Product = ({ item, data, setData, className }) => {
             <h3 className="border-b-2 border-white-900 pb-1 mb-3 mr-5">
               Title
             </h3>
-            <h5 className="font-semibold tracking-tight text-gray-900 dark:text-white font-robotoBold">
+            <h5 className="font-semibold tracking-tight text-gray-900 font-robotoBold">
               {item.name}
             </h5>
           </span>
@@ -92,7 +92,7 @@ const Product = ({ item, data, setData, className }) => {
         <div className="flex items-center justify-between">
           <span>
             <h3 className="border-b-2 border-white-900 pb-1 mb-3">Price</h3>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white font-robotoReg">
+            <h3 className="text-xl font-bold text-gray-900 font-robotoReg">
               ${item.price}
             </h3>
           </span>

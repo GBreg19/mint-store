@@ -53,7 +53,8 @@ const Header = ({ onSideBurger }) => {
 
         <div className="lg:col-span-1 basis-1/2">
           <a
-            href="/"
+            href=""
+            onClick={() => navigate("/")}u
             className="md:flex hidden cursor-pointer hover:text-sky-500 items-center"
           >
             <span>
